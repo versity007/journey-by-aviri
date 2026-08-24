@@ -149,13 +149,14 @@ function LoopFigure({ pose }: { pose: "seated" | "standing" | "holding" }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="128" cy="124" r={headR} fill="currentColor" stroke="none" />
-        <path d="M 128 214 C 128 188, 124 170, 128 158" />
-        <path d="M 128 214 L 128 132" />
-        <path d="M 128 132 L 122 196" />
-        <path d="M 128 132 L 134 196" />
-        <path d="M 128 158 L 116 142" />
-        <path d="M 128 158 L 140 142" />
+        <circle cx="128" cy="142" r={headR} fill="currentColor" stroke="none" />
+        <path d="M 128 214 C 128 190, 132 174, 128 158" />
+        <path d="M 128 214 L 116 152" />
+        <path d="M 128 214 L 140 152" />
+        <path d="M 116 152 L 112 198" />
+        <path d="M 140 152 L 144 198" />
+        <path d="M 128 158 L 114 152" />
+        <path d="M 128 158 L 142 152" />
       </g>
     );
   }
@@ -188,6 +189,7 @@ function LoopFigure({ pose }: { pose: "seated" | "standing" | "holding" }) {
     </g>
   );
 }
+
 
 
 function LoopSvg({
