@@ -417,6 +417,18 @@ function Index() {
               <div className="mb-6 text-[11px] font-semibold tracking-[0.2em] text-primary">
                 {o.n}
               </div>
+              {o.Svg && (
+                <figure className="mb-8">
+                  <div className="w-full max-w-[420px]">
+                    <o.Svg />
+                  </div>
+                  <figcaption
+                    className={`mt-4 font-serif text-3xl font-normal leading-[1.14] ${o.loopColor}`}
+                  >
+                    {o.loopLabel}
+                  </figcaption>
+                </figure>
+              )}
               <h3 className="mb-4 font-serif text-3xl font-normal leading-[1.14]">{o.title}</h3>
               <p className="text-[17px] leading-[1.65] text-body">{o.body}</p>
             </div>
@@ -510,18 +522,31 @@ function Index() {
               <h3 className="font-serif text-[clamp(24px,2.2vw,32px)] leading-[1.2]">
                 What it’s like for them
               </h3>
-              <p className="text-[19px] leading-[1.7] text-body">
-                Nobody is asked to be more positive, more open, or ready to grow. We start with the
-                grievances exactly as they are, treated as legitimate, because they usually are.
-              </p>
-              <p className="text-[19px] leading-[1.7] text-body">
-                What changes is that they get to see the machinery from the outside. Most people
-                describe the weight coming off before they can describe why.
-              </p>
-              <p className="text-[19px] leading-[1.7] text-body">
-                Work grievances and personal ones both come up, because people don’t sort themselves
-                that neatly. It stays confidential either way.
-              </p>
+              <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
+                <div className="grid gap-7">
+                  <p className="text-[19px] leading-[1.7] text-body">
+                    Nobody is asked to be more positive, more open, or ready to grow. We start with
+                    the grievances exactly as they are, treated as legitimate, because they usually
+                    are.
+                  </p>
+                  <p className="text-[19px] leading-[1.7] text-body">
+                    What changes is that they get to see the machinery from the outside. Most people
+                    describe the weight coming off before they can describe why.
+                  </p>
+                  <p className="text-[19px] leading-[1.7] text-body">
+                    Work grievances and personal ones both come up, because people don’t sort
+                    themselves that neatly. It stays confidential either way.
+                  </p>
+                </div>
+                <figure className="bg-background px-6 py-8">
+                  <div className="mx-auto max-w-[420px]">
+                    <SvgB />
+                  </div>
+                  <figcaption className="mt-5 font-serif text-3xl font-normal leading-[1.14] text-loop-amber">
+                    Forgiveness Loop
+                  </figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
