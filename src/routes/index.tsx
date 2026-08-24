@@ -361,6 +361,13 @@ function Index() {
               See how the seven weeks work
             </a>
           </div>
+          <p className="mt-7 text-sm text-subtle">
+            Here on behalf of someone else?{" "}
+            <a href="#for-the-one-paying" className="border-b border-subtle pb-0.5 text-ink transition-colors hover:border-primary hover:text-primary">
+              Start here
+            </a>
+            .
+          </p>
         </div>
 
         <div className="relative aspect-[4/5] w-full bg-surface">
