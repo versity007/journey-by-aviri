@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useId } from "react";
 import heroLoop from "@/assets/hero-loop.jpg";
 
 export const Route = createFileRoute("/")({
@@ -81,6 +82,107 @@ const stats = [
   ["1-on-1", "Never a workshop or a cohort"],
   ["Module 0", "Grievance is the entry point"],
 ];
+
+const threeLoops = [
+  {
+    variant: "grievance" as const,
+    colorClass: "text-loop-red",
+    label: "Grievance Loop",
+    caption: "Inside it, rehearsing.",
+  },
+  {
+    variant: "forgiveness" as const,
+    colorClass: "text-loop-amber",
+    label: "Forgiveness Loop",
+    caption: "Outside it, seeing it run.",
+  },
+  {
+    variant: "productive" as const,
+    colorClass: "text-loop-green",
+    label: "Productive Loop",
+    caption: "Holding it, pointed at something useful.",
+  },
+];
+
+function LoopSvg({
+  variant,
+  colorClass,
+  label,
+}: {
+  variant: "grievance" | "forgiveness" | "productive";
+  colorClass: string;
+  label: string;
+}) {
+  const id = useId();
+  const titleId = `${id}-title`;
+  const descId = `${id}-desc`;
+
+  const grievance = (
+    <g>
+      <circle cx="175" cy="125" r="10" />
+      <path d="M 175 135 L 175 155" />
+      <path d="M 175 155 L 160 170" />
+      <path d="M 175 155 L 190 170" />
+      <path d="M 160 170 L 160 185" />
+      <path d="M 190 170 L 190 185" />
+      <path d="M 175 140 L 160 165" />
+      <path d="M 175 140 L 190 165" />
+    </g>
+  );
+
+  const forgiveness = (
+    <g>
+      <circle cx="250" cy="115" r="10" />
+      <path d="M 250 125 L 248 165" />
+      <path d="M 248 165 L 238 200" />
+      <path d="M 248 165 L 258 200" />
+      <path d="M 248 140 L 220 150" />
+    </g>
+  );
+
+  const productive = (
+    <g>
+      <circle cx="250" cy="115" r="10" />
+      <path d="M 250 125 L 250 165" />
+      <path d="M 250 165 L 240 200" />
+      <path d="M 250 165 L 260 200" />
+      <path d="M 250 135 L 290 150" />
+    </g>
+  );
+
+  const desc =
+    variant === "grievance"
+      ? "A simple line figure sits hunched with knees drawn up inside a scribbled coil."
+      : variant === "forgiveness"
+      ? "A simple line figure stands outside a scribbled coil, turned toward it and looking at it."
+      : "A simple line figure stands outside a scribbled coil, holding the loose tail and lassoing it.";
+
+  return (
+    <svg
+      viewBox="0 0 320 240"
+      className={`h-auto w-full ${colorClass}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role="img"
+      aria-labelledby={`${titleId} ${descId}`}
+    >
+      <title id={titleId}>{label}</title>
+      <desc id={descId}>{desc}</desc>
+      <g>
+        <path d="M 120 80 C 200 55, 265 100, 235 155 C 205 210, 105 195, 75 145 C 45 95, 85 70, 120 80" />
+        <path d="M 105 95 C 175 75, 235 115, 210 160 C 185 205, 95 190, 70 145 C 50 100, 80 85, 105 95" />
+        <path d="M 135 115 C 190 100, 220 130, 200 160 C 180 190, 120 185, 105 155 C 95 125, 115 110, 135 115" />
+        <path d="M 220 145 C 245 135, 270 155, 290 150" />
+      </g>
+      {variant === "grievance" && grievance}
+      {variant === "forgiveness" && forgiveness}
+      {variant === "productive" && productive}
+    </svg>
+  );
+}
 
 function Index() {
   return (
@@ -249,6 +351,29 @@ function Index() {
               Left alone, one person’s loop becomes the team’s weather.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
+        <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
+          <h2 className="display max-w-[20em] text-[clamp(32px,3.6vw,56px)]">Three Loops</h2>
+          <p className="max-w-[26em] text-[17px] leading-relaxed text-body">
+            The same energy, in three different relationships to it.
+          </p>
+        </div>
+
+        <div className="grid gap-px border-y border-border bg-border lg:grid-cols-3">
+          {threeLoops.map((l) => (
+            <div key={l.label} className="bg-background px-8 pt-10 pb-12">
+              <div className="mb-8">
+                <LoopSvg variant={l.variant} colorClass={l.colorClass} label={l.label} />
+              </div>
+              <h3 className={`mb-3 font-serif text-3xl font-normal leading-[1.14] ${l.colorClass}`}>
+                {l.label}
+              </h3>
+              <p className="text-[17px] leading-[1.65] text-body">{l.caption}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -446,13 +571,25 @@ function Index() {
           </div>
           <div className="bg-dark px-8 py-12 md:px-12">
             <div className="eyebrow mb-10 text-dark-foreground/40">The manager</div>
-            <div className="flex min-h-[180px] items-center border border-dashed border-rule-invert px-6 py-10">
-              <p className="font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] text-dark-foreground/45">
-                Golab quote pending — his read on what changed for the team.
+            <blockquote className="mb-8 font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] tracking-[-0.01em]">
+              <p className="mb-6 text-dark-foreground/90">
+                “One of our top leaders had been in a foul mood for months. I spent a lot of time sitting
+                with him and listening as he developed a growing list of grievances both at home and at
+                work. I wanted to help, but ultimately, the best I could do was be a sounding board.
               </p>
-            </div>
-            <div className="mt-8 text-sm font-medium uppercase tracking-[0.14em] text-dark-foreground/40">
-              — Golab
+              <p className="mb-6 text-dark-foreground/90">
+                When I learned about Aviri’s JOurneY of Grievance Experience, I thought it might be worth
+                a try. My colleague agreed to enroll in the coursework and before long, I began noticing a
+                positive shift in his mood, his approach to life, and, perhaps most importantly, his sense
+                of accountability.
+              </p>
+              <p className="text-dark-foreground/90">
+                After he completed the coursework, we both saw enough value in the experience that we
+                decided to continue working with Bijoy together, this time as a team of three.”
+              </p>
+            </blockquote>
+            <div className="text-sm font-medium uppercase tracking-[0.14em] text-dark-foreground/40">
+              — Steve G.
             </div>
           </div>
         </div>
