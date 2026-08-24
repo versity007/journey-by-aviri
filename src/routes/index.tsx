@@ -117,49 +117,70 @@ function LoopSvg({
   const titleId = `${id}-title`;
   const descId = `${id}-desc`;
 
-  const grievance = (
-    <g>
-      <circle cx="175" cy="125" r="10" />
-      <path d="M 175 135 L 175 155" />
-      <path d="M 175 155 L 160 170" />
-      <path d="M 175 155 L 190 170" />
-      <path d="M 160 170 L 160 185" />
-      <path d="M 190 170 L 190 185" />
-      <path d="M 175 140 L 160 165" />
-      <path d="M 175 140 L 190 165" />
-    </g>
-  );
-
-  const forgiveness = (
-    <g>
-      <circle cx="250" cy="115" r="10" />
-      <path d="M 250 125 L 248 165" />
-      <path d="M 248 165 L 238 200" />
-      <path d="M 248 165 L 258 200" />
-      <path d="M 248 140 L 220 150" />
-    </g>
-  );
-
-  const productive = (
-    <g>
-      <circle cx="250" cy="115" r="10" />
-      <path d="M 250 125 L 250 165" />
-      <path d="M 250 165 L 240 200" />
-      <path d="M 250 165 L 260 200" />
-      <path d="M 250 135 L 290 150" />
-    </g>
-  );
-
   const desc =
     variant === "grievance"
-      ? "A simple line figure sits hunched with knees drawn up inside a scribbled coil."
+      ? "A person sits hunched with knees drawn up inside a scribbled coil, the loop fully encircling them."
       : variant === "forgiveness"
-      ? "A simple line figure stands outside a scribbled coil, turned toward it and looking at it."
-      : "A simple line figure stands outside a scribbled coil, holding the loose tail and lassoing it.";
+      ? "A person stands outside an empty scribbled coil, turned toward it, with the coil's tail reaching toward their feet."
+      : "A person stands outside an empty scribbled coil, holding a rope that loops around the coil and returns to their raised hand.";
+
+  const coil = (
+    <g>
+      <path d="M 70 130 C 70 70, 190 70, 190 130 C 190 190, 70 190, 70 130" />
+      <path d="M 95 100 C 155 80, 210 105, 210 150 C 210 195, 155 215, 95 195 C 50 175, 55 120, 95 100" />
+      <path d="M 115 145 C 170 120, 215 150, 200 185 C 185 220, 110 210, 80 175 C 60 145, 85 115, 115 145" />
+      <path d="M 130 130 C 165 100, 190 130, 175 160 C 160 190, 100 185, 85 155 C 75 125, 100 100, 130 130" />
+    </g>
+  );
+
+  const tail =
+    variant === "grievance" ? (
+      <path d="M 188 132 C 225 145, 260 125, 300 140" />
+    ) : variant === "forgiveness" ? (
+      <path d="M 190 165 C 220 180, 240 178, 260 170" />
+    ) : (
+      <path d="M 235 92 C 195 60, 85 60, 65 110 C 50 155, 95 190, 145 165 C 185 145, 210 115, 235 92" />
+    );
+
+  const sittingFigure = (
+    <g className="text-ink" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="130" cy="132" r="8" fill="currentColor" stroke="none" />
+      <path d="M 130 140 L 130 163" />
+      <path d="M 130 163 L 120 148" />
+      <path d="M 130 163 L 140 148" />
+      <path d="M 120 148 L 120 178" />
+      <path d="M 140 148 L 140 178" />
+      <path d="M 130 140 L 118 148" />
+      <path d="M 130 140 L 142 148" />
+    </g>
+  );
+
+  const standingFigure = (
+    <g className="text-ink" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="260" cy="120" r="8" fill="currentColor" stroke="none" />
+      <path d="M 260 128 L 260 158" />
+      <path d="M 260 158 L 250 170" />
+      <path d="M 260 158 L 270 170" />
+    </g>
+  );
+
+  const forgivenessArms = (
+    <g className="text-ink" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M 260 128 L 245 152" />
+      <path d="M 260 128 L 275 152" />
+    </g>
+  );
+
+  const productiveArms = (
+    <g className="text-ink" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M 260 128 L 235 92" />
+      <path d="M 260 128 L 275 152" />
+    </g>
+  );
 
   return (
     <svg
-      viewBox="0 0 320 240"
+      viewBox="0 0 320 220"
       className={`h-auto w-full ${colorClass}`}
       fill="none"
       stroke="currentColor"
@@ -171,15 +192,12 @@ function LoopSvg({
     >
       <title id={titleId}>{label}</title>
       <desc id={descId}>{desc}</desc>
-      <g>
-        <path d="M 120 80 C 200 55, 265 100, 235 155 C 205 210, 105 195, 75 145 C 45 95, 85 70, 120 80" />
-        <path d="M 105 95 C 175 75, 235 115, 210 160 C 185 205, 95 190, 70 145 C 50 100, 80 85, 105 95" />
-        <path d="M 135 115 C 190 100, 220 130, 200 160 C 180 190, 120 185, 105 155 C 95 125, 115 110, 135 115" />
-        <path d="M 220 145 C 245 135, 270 155, 290 150" />
-      </g>
-      {variant === "grievance" && grievance}
-      {variant === "forgiveness" && forgiveness}
-      {variant === "productive" && productive}
+      {coil}
+      {tail}
+      {variant === "grievance" && sittingFigure}
+      {variant !== "grievance" && standingFigure}
+      {variant === "forgiveness" && forgivenessArms}
+      {variant === "productive" && productiveArms}
     </svg>
   );
 }
