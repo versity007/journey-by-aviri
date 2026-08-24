@@ -72,6 +72,9 @@
   --color-dark: var(--dark);
   --color-dark-foreground: var(--dark-foreground);
   --color-ember: var(--ember);
+  --color-loop-red: var(--loop-red);
+  --color-loop-amber: var(--loop-amber);
+  --color-loop-green: var(--loop-green);
   --color-rule: var(--rule);
   --color-rule-invert: var(--rule-invert);
 }
