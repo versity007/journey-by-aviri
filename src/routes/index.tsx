@@ -414,7 +414,7 @@ function Index() {
 
         <div className="relative">
           <span aria-hidden="true" className="absolute top-[5px] right-0 left-0 hidden h-px bg-border lg:block" />
-          <div className="grid gap-14 lg:grid-cols-3 lg:gap-12">
+          <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
             {threeLoops.map((l, i) => (
               <Fragment key={l.label}>
                 <div>
