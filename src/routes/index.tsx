@@ -417,7 +417,7 @@ function Index() {
           <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
             {threeLoops.map((l, i) => (
               <Fragment key={l.label}>
-                <div>
+                <div className="pb-10">
                   <div
                     className={`relative mb-3 inline-block bg-background pr-5 text-[11px] font-semibold tracking-[0.22em] ${l.colorClass}`}
                   >
