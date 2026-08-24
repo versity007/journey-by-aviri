@@ -432,7 +432,7 @@ function Index() {
                   </h3>
                 </div>
                 {i < threeLoops.length - 1 && (
-                  <span aria-hidden="true" className="mx-auto block h-14 w-px bg-border lg:hidden" />
+                  <span aria-hidden="true" className="mx-auto block h-8 w-px bg-border lg:hidden" />
                 )}
               </Fragment>
             ))}
