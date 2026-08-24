@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useId } from "react";
+import { Fragment, useId } from "react";
 import heroLoop from "@/assets/hero-loop.jpg";
 
 export const Route = createFileRoute("/")({
@@ -87,18 +87,24 @@ const threeLoops = [
   {
     variant: "grievance" as const,
     colorClass: "text-loop-red",
+    n: "01",
+    kicker: "The case",
     label: "Grievance Loop",
     caption: "Inside it, rehearsing.",
   },
   {
     variant: "forgiveness" as const,
     colorClass: "text-loop-amber",
+    n: "02",
+    kicker: "The interview",
     label: "Forgiveness Loop",
     caption: "Outside it, seeing it run.",
   },
   {
     variant: "productive" as const,
     colorClass: "text-loop-green",
+    n: "03",
+    kicker: "The new loop",
     label: "Productive Loop",
     caption: "Holding it, pointed at something useful.",
   },
