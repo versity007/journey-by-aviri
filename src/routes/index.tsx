@@ -802,16 +802,43 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-dark px-6 py-20 text-dark-foreground md:px-12 lg:py-28">
+      <section className="bg-surface px-6 py-20 md:px-12 lg:py-28">
         <div className="mx-auto max-w-[1440px]">
-          <div className="bg-dark px-8 py-12 md:px-12">
-            <div className="eyebrow mb-10 text-ember">The participant</div>
-            <blockquote className="mb-8 max-w-[28em] font-serif text-[clamp(26px,2.9vw,44px)] leading-[1.14] tracking-[-0.01em]">
-              “The grievance cloud lifted. And I stopped forming new ones. I feel the change in very
-              real terms.”
+          <div className="border-l-2 border-primary pl-8 md:pl-12">
+            <div className="eyebrow mb-6 text-subtle">The participant</div>
+            <blockquote className="mb-8 font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] tracking-[-0.01em] text-ink">
+              <p className="mb-8 text-[clamp(24px,2.6vw,38px)] leading-[1.2]">
+                "It’s like picking up dog shit your whole life, and your yard keeps getting bigger,
+                and one day someone tells you there never was a dog, and you’re free to leave."
+              </p>
+              <p className="mb-6">
+                "I came into this course with reasonable self-awareness and thought I’d worked through
+                most of my stuff. I had not. What Bijoy built is closer to surgery than self-help.
+                Session by session, he takes you through the mechanics of grievance — the courtroom of
+                your own mind, the faulty models underneath it, the evolutionary mismatch between the
+                machinery we’re running and the world we’re actually living in."
+              </p>
+              <p className="mb-6">
+                "There were three moments in particular I could never have arrived at unguided, where I
+                saw a logical fallacy in how I’d always interpreted the world — and once seen, there was
+                no going back. When you realize the delusion of using your mind as a tool it was never
+                designed to be, it frees you from a Sisyphean curse."
+              </p>
+              <p className="mb-6">
+                "The grievance cloud lifted. And I stopped forming new ones. I feel the change in very
+                real terms."
+              </p>
+              <p className="mb-6">
+                "And the course doesn’t leave you there. The final session turns relief into a way
+                forward: what used to become grievances now become signals that point to root causes,
+                with strategies to resolve the misalignment — often through better communication."
+              </p>
+              <p className="text-[clamp(22px,2.2vw,30px)] italic leading-[1.3]">
+                "What price do you put on learning to suffer less?"
+              </p>
             </blockquote>
-            <div className="text-sm font-medium uppercase tracking-[0.14em] text-dark-foreground/60">
-              — Chad A.
+            <div className="text-sm font-medium uppercase tracking-[0.14em] text-subtle">
+              — CHAD A.
             </div>
           </div>
         </div>
