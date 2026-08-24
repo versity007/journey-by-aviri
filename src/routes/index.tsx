@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useId } from "react";
+import { Fragment, useId } from "react";
 import heroLoop from "@/assets/hero-loop.jpg";
 
 export const Route = createFileRoute("/")({
@@ -87,29 +87,108 @@ const threeLoops = [
   {
     variant: "grievance" as const,
     colorClass: "text-loop-red",
+    n: "01",
+    kicker: "The case",
     label: "Grievance Loop",
     caption: "Inside it, rehearsing.",
   },
   {
     variant: "forgiveness" as const,
     colorClass: "text-loop-amber",
+    n: "02",
+    kicker: "The interview",
     label: "Forgiveness Loop",
     caption: "Outside it, seeing it run.",
   },
   {
     variant: "productive" as const,
     colorClass: "text-loop-green",
+    n: "03",
+    kicker: "The new loop",
     label: "Productive Loop",
     caption: "Holding it, pointed at something useful.",
   },
 ];
+
+// Shared geometry: one coil of five hand-sketched ellipse strokes and one
+// figure pictogram, reused across all three panels. Only color, pose and
+// position change between them.
+const COIL_PATHS = [
+  "M 50 138 C 52 102, 84 74, 128 74 C 172 74, 204 102, 206 138 C 208 174, 174 206, 126 206 C 80 206, 48 174, 50 138",
+  "M 56 122 C 70 92, 106 70, 146 76 C 186 82, 210 110, 204 148 C 198 186, 160 210, 116 202 C 74 194, 44 156, 56 122",
+  "M 60 156 C 46 120, 74 84, 120 78 C 168 72, 202 98, 206 134 C 210 172, 182 202, 134 208 C 88 214, 72 190, 60 156",
+  "M 74 140 C 74 110, 98 90, 130 90 C 162 90, 184 112, 182 142 C 180 172, 154 192, 122 190 C 92 188, 74 168, 74 140",
+  "M 66 128 C 80 96, 118 80, 154 90 C 190 100, 206 128, 194 162 C 182 194, 142 210, 104 198 C 70 186, 54 158, 66 128",
+];
+
+const TAIL_PATHS = {
+  // Loose tail, trailing off toward no one.
+  grievance: "M 202 152 C 232 162, 258 150, 292 160",
+  // Tail reaches from the coil toward the figure's feet.
+  forgiveness: "M 196 186 C 218 206, 240 214, 254 214",
+  // The tail becomes a rope: from the raised hand, once around the coil, back.
+  productive:
+    "M 236 102 C 206 78, 150 60, 100 72 C 52 84, 34 128, 52 172 C 70 214, 140 226, 184 200 C 216 181, 234 140, 236 102",
+} as const;
+
+type LoopVariant = keyof typeof TAIL_PATHS;
+
+function LoopFigure({ pose }: { pose: "seated" | "standing" | "holding" }) {
+  if (pose === "seated") {
+    // Inside the coil: knees drawn up, head bowed, compact and enclosed.
+    return (
+      <g
+        className="text-ink"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="116" cy="122" r="9" fill="currentColor" stroke="none" />
+        <path d="M 120 131 L 132 172" />
+        <path d="M 132 172 L 106 152" />
+        <path d="M 106 152 L 112 196" />
+        <path d="M 123 138 L 108 154" />
+        <path d="M 126 141 L 114 158" />
+      </g>
+    );
+  }
+  // Outside the coil, upright on the same baseline in both panels.
+  return (
+    <g
+      className="text-ink"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="264" cy="122" r="9" fill="currentColor" stroke="none" />
+      <path d="M 264 131 L 264 170" />
+      <path d="M 264 170 L 254 214" />
+      <path d="M 264 170 L 274 214" />
+      {pose === "holding" ? (
+        <>
+          <path d="M 264 140 L 236 102" />
+          <path d="M 264 142 L 278 166" />
+        </>
+      ) : (
+        <>
+          <path d="M 264 142 L 242 158" />
+          <path d="M 264 142 L 276 168" />
+        </>
+      )}
+    </g>
+  );
+}
 
 function LoopSvg({
   variant,
   colorClass,
   label,
 }: {
-  variant: "grievance" | "forgiveness" | "productive";
+  variant: LoopVariant;
   colorClass: string;
   label: string;
 }) {
@@ -119,72 +198,18 @@ function LoopSvg({
 
   const desc =
     variant === "grievance"
-      ? "A person sits hunched with knees drawn up inside a scribbled coil, the loop fully encircling them."
+      ? "A person sits inside the scribbled coil with knees drawn up and head bowed, the loop closed around them."
       : variant === "forgiveness"
-      ? "A person stands outside an empty scribbled coil, turned toward it, with the coil's tail reaching toward their feet."
-      : "A person stands outside an empty scribbled coil, holding a rope that loops around the coil and returns to their raised hand.";
-
-  const coil = (
-    <g>
-      <path d="M 70 130 C 70 70, 190 70, 190 130 C 190 190, 70 190, 70 130" />
-      <path d="M 95 100 C 155 80, 210 105, 210 150 C 210 195, 155 215, 95 195 C 50 175, 55 120, 95 100" />
-      <path d="M 115 145 C 170 120, 215 150, 200 185 C 185 220, 110 210, 80 175 C 60 145, 85 115, 115 145" />
-      <path d="M 130 130 C 165 100, 190 130, 175 160 C 160 190, 100 185, 85 155 C 75 125, 100 100, 130 130" />
-    </g>
-  );
-
-  const tail =
-    variant === "grievance" ? (
-      <path d="M 188 132 C 225 145, 260 125, 300 140" />
-    ) : variant === "forgiveness" ? (
-      <path d="M 190 165 C 220 180, 240 178, 260 170" />
-    ) : (
-      <path d="M 235 92 C 195 60, 85 60, 65 110 C 50 155, 95 190, 145 165 C 185 145, 210 115, 235 92" />
-    );
-
-  const sittingFigure = (
-    <g className="text-ink" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="130" cy="132" r="8" fill="currentColor" stroke="none" />
-      <path d="M 130 140 L 130 163" />
-      <path d="M 130 163 L 120 148" />
-      <path d="M 130 163 L 140 148" />
-      <path d="M 120 148 L 120 178" />
-      <path d="M 140 148 L 140 178" />
-      <path d="M 130 140 L 118 148" />
-      <path d="M 130 140 L 142 148" />
-    </g>
-  );
-
-  const standingFigure = (
-    <g className="text-ink" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="260" cy="120" r="8" fill="currentColor" stroke="none" />
-      <path d="M 260 128 L 260 158" />
-      <path d="M 260 158 L 250 170" />
-      <path d="M 260 158 L 270 170" />
-    </g>
-  );
-
-  const forgivenessArms = (
-    <g className="text-ink" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M 260 128 L 245 152" />
-      <path d="M 260 128 L 275 152" />
-    </g>
-  );
-
-  const productiveArms = (
-    <g className="text-ink" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M 260 128 L 235 92" />
-      <path d="M 260 128 L 275 152" />
-    </g>
-  );
+      ? "A person stands upright outside the empty coil, squared toward it and looking at it, with clear space between them."
+      : "A person stands upright outside the empty coil with one arm raised, holding a rope that wraps once around the coil and returns to their hand.";
 
   return (
     <svg
-      viewBox="0 0 320 220"
+      viewBox="0 0 340 260"
       className={`h-auto w-full ${colorClass}`}
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.5"
+      strokeWidth="1.75"
       strokeLinecap="round"
       strokeLinejoin="round"
       role="img"
@@ -192,12 +217,13 @@ function LoopSvg({
     >
       <title id={titleId}>{label}</title>
       <desc id={descId}>{desc}</desc>
-      {coil}
-      {tail}
-      {variant === "grievance" && sittingFigure}
-      {variant !== "grievance" && standingFigure}
-      {variant === "forgiveness" && forgivenessArms}
-      {variant === "productive" && productiveArms}
+      {COIL_PATHS.map((d) => (
+        <path key={d} d={d} />
+      ))}
+      <path d={TAIL_PATHS[variant]} />
+      <LoopFigure
+        pose={variant === "grievance" ? "seated" : variant === "forgiveness" ? "standing" : "holding"}
+      />
     </svg>
   );
 }
@@ -372,26 +398,40 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
-        <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
+      <section className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 lg:py-40">
+        <div className="mb-20 flex flex-wrap items-end justify-between gap-8">
           <h2 className="display max-w-[20em] text-[clamp(32px,3.6vw,56px)]">Three Loops</h2>
           <p className="max-w-[26em] text-[17px] leading-relaxed text-body">
             The same energy, in three different relationships to it.
           </p>
         </div>
 
-        <div className="grid gap-px border-y border-border bg-border lg:grid-cols-3">
-          {threeLoops.map((l) => (
-            <div key={l.label} className="bg-background px-8 pt-10 pb-12">
-              <div className="mb-8">
-                <LoopSvg variant={l.variant} colorClass={l.colorClass} label={l.label} />
-              </div>
-              <h3 className={`mb-3 font-serif text-3xl font-normal leading-[1.14] ${l.colorClass}`}>
-                {l.label}
-              </h3>
-              <p className="text-[17px] leading-[1.65] text-body">{l.caption}</p>
-            </div>
-          ))}
+        <div className="relative">
+          <span aria-hidden="true" className="absolute top-[5px] right-0 left-0 hidden h-px bg-border lg:block" />
+          <div className="grid gap-14 lg:grid-cols-3 lg:gap-12">
+            {threeLoops.map((l, i) => (
+              <Fragment key={l.label}>
+                <div>
+                  <div
+                    className={`relative mb-3 inline-block bg-background pr-5 text-[11px] font-semibold tracking-[0.22em] ${l.colorClass}`}
+                  >
+                    {l.n}
+                  </div>
+                  <div className="label-caps mb-10 text-subtle">{l.kicker}</div>
+                  <div className="mb-10 min-h-[260px]">
+                    <LoopSvg variant={l.variant} colorClass={l.colorClass} label={l.label} />
+                  </div>
+                  <h3 className={`mb-3 font-serif text-3xl font-normal leading-[1.14] ${l.colorClass}`}>
+                    {l.label}
+                  </h3>
+                  <p className="text-[17px] leading-[1.65] text-body">{l.caption}</p>
+                </div>
+                {i < threeLoops.length - 1 && (
+                  <span aria-hidden="true" className="mx-auto block h-14 w-px bg-border lg:hidden" />
+                )}
+              </Fragment>
+            ))}
+          </div>
         </div>
       </section>
 
