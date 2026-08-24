@@ -739,7 +739,7 @@ function Index() {
             </div>
             <p className="mt-10 text-[15px] leading-relaxed text-subtle">
               <span className="label-caps">Drawn from</span> · Dr. Fred Luskin, Forgive for Good ·
-              The Science of Revenge · The Age of Revenge · Steve Jobs in exile from Apple, 1985 ·
+              The Science of Revenge · The Age of Grievance · Steve Jobs in exile from Apple, 1985 ·
               Dopamine Nation · Hidden Brain, “No Hard Feelings”
             </p>
           </div>
@@ -808,45 +808,45 @@ function Index() {
             <div className="eyebrow mb-6 text-subtle">The participant</div>
             <blockquote className="mb-8 font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] tracking-[-0.01em] text-ink">
               <p className="mb-8 text-[clamp(24px,2.6vw,38px)] leading-[1.2]">
-                "It’s like picking up dog shit your whole life, and your yard keeps getting bigger,
-                and one day someone tells you there never was a dog, and you’re free to leave."
+                “It’s like picking up dog shit your whole life, and your yard keeps getting bigger,
+                and one day someone tells you there never was a dog, and you’re free to leave.”
               </p>
               <p className="mb-6">
-                "I came into this course with reasonable self-awareness and thought I’d worked through
+                “I came into this course with reasonable self-awareness and thought I’d worked through
                 most of my stuff. I had not. What Bijoy built is closer to surgery than self-help.
                 Session by session, he takes you through the mechanics of grievance — the courtroom of
                 your own mind, the faulty models underneath it, the evolutionary mismatch between the
-                machinery we’re running and the world we’re actually living in."
+                machinery we’re running and the world we’re actually living in.
               </p>
               <p className="mb-6">
-                "There were three moments in particular I could never have arrived at unguided, where I
+                There were three moments in particular I could never have arrived at unguided, where I
                 saw a logical fallacy in how I’d always interpreted the world — and once seen, there was
                 no going back. When you realize the delusion of using your mind as a tool it was never
-                designed to be, it frees you from a Sisyphean curse."
+                designed to be, it frees you from a Sisyphean curse.
               </p>
               <p className="mb-6">
-                "First: the models I’d assumed were proxies of reality don’t hold enough information to be
+                First: the models I’d assumed were proxies of reality don’t hold enough information to be
                 trusted. Second: the capacity of the mind is minute compared to the scope of things to be
                 aggrieved about, so any attempt to scale that process is doomed to end in arbitrary
                 decisions and failure. Third: there are systems designed to scale to the level of
-                societal conflict, and they don’t belong in our individual minds."
+                societal conflict, and they don’t belong in our individual minds.
               </p>
               <p className="mb-6">
-                "The grievance cloud lifted. And I stopped forming new ones. I feel the change in very
-                real terms."
+                The grievance cloud lifted. And I stopped forming new ones. I feel the change in very
+                real terms.
               </p>
               <p className="mb-6">
-                "And the course doesn’t leave you there. The final session turns relief into a way
+                And the course doesn’t leave you there. The final session turns relief into a way
                 forward: what used to become grievances now become signals that point to root causes,
-                with strategies to resolve the misalignment — often through better communication."
+                with strategies to resolve the misalignment — often through better communication.
               </p>
               <p className="mb-6">
-                "Bijoy has built on the body of work that came before him and done something few others
+                Bijoy has built on the body of work that came before him and done something few others
                 have: reduced concepts that had been purely theoretical to practical scientific models
-                you can actually inspect and change."
+                you can actually inspect and change.
               </p>
               <p className="text-[clamp(22px,2.2vw,30px)] italic leading-[1.3]">
-                "What price do you put on learning to suffer less?"
+                What price do you put on learning to suffer less?”
               </p>
             </blockquote>
             <div className="text-sm font-medium uppercase tracking-[0.14em] text-subtle">
