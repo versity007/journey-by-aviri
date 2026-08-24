@@ -72,9 +72,6 @@
   --color-dark: var(--dark);
   --color-dark-foreground: var(--dark-foreground);
   --color-ember: var(--ember);
-  --color-loop-red: var(--loop-red);
-  --color-loop-amber: var(--loop-amber);
-  --color-loop-green: var(--loop-green);
   --color-rule: var(--rule);
   --color-rule-invert: var(--rule-invert);
 }
@@ -108,9 +105,6 @@
   --dark: oklch(0.1959 0.012 91.79);
   --dark-foreground: oklch(0.962 0.0115 84.58);
   --ember: oklch(0.6401 0.1212 41.53);
-  --loop-red: var(--primary);
-  --loop-amber: oklch(0.72 0.14 62);
-  --loop-green: oklch(0.55 0.14 145);
 
   --rule: oklch(0.1959 0.012 91.79 / 14%);
   --rule-invert: oklch(0.962 0.0115 84.58 / 18%);
