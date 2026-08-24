@@ -134,54 +134,64 @@ const TAIL_PATHS = {
 type LoopVariant = keyof typeof TAIL_PATHS;
 
 function LoopFigure({ pose }: { pose: "seated" | "standing" | "holding" }) {
+  const headR = 9;
+  const stroke = 6;
+
   if (pose === "seated") {
-    // Inside the coil: knees drawn up, head bowed, compact and enclosed.
+    // Inside the coil: hips on the baseline, knees drawn up toward the chest,
+    // back curved forward, head bowed down onto the knees, arms wrapped around the shins.
     return (
       <g
         className="text-ink"
         fill="none"
         stroke="currentColor"
-        strokeWidth="6"
+        strokeWidth={stroke}
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="116" cy="122" r="9" fill="currentColor" stroke="none" />
-        <path d="M 120 131 L 132 172" />
-        <path d="M 132 172 L 106 152" />
-        <path d="M 106 152 L 112 196" />
-        <path d="M 123 138 L 108 154" />
-        <path d="M 126 141 L 114 158" />
+        <circle cx="128" cy="148" r={headR} fill="currentColor" stroke="none" />
+        <path d="M 128 214 C 128 190, 124 172, 128 162" />
+        <path d="M 128 214 L 122 154" />
+        <path d="M 128 214 L 134 154" />
+        <path d="M 122 154 L 124 214" />
+        <path d="M 134 154 L 132 214" />
+        <path d="M 128 162 L 120 154" />
+        <path d="M 128 162 L 138 154" />
       </g>
     );
   }
-  // Outside the coil, upright on the same baseline in both panels.
+
+
+  // Outside the coil: upright on the same baseline, feet planted together, no stride.
   return (
     <g
       className="text-ink"
       fill="none"
       stroke="currentColor"
-      strokeWidth="6"
+      strokeWidth={stroke}
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <circle cx="264" cy="122" r="9" fill="currentColor" stroke="none" />
+      <circle cx="264" cy="122" r={headR} fill="currentColor" stroke="none" />
       <path d="M 264 131 L 264 170" />
-      <path d="M 264 170 L 254 214" />
-      <path d="M 264 170 L 274 214" />
+      <path d="M 264 170 L 260 214" />
+      <path d="M 264 170 L 268 214" />
       {pose === "holding" ? (
         <>
-          <path d="M 264 140 L 236 102" />
-          <path d="M 264 142 L 278 166" />
+          <path d="M 264 142 L 236 102" />
+          <path d="M 264 142 L 272 168" />
         </>
       ) : (
         <>
-          <path d="M 264 142 L 242 158" />
-          <path d="M 264 142 L 276 168" />
+          <path d="M 264 142 L 256 168" />
+          <path d="M 264 142 L 272 168" />
         </>
       )}
     </g>
   );
 }
+
+
 
 function LoopSvg({
   variant,
