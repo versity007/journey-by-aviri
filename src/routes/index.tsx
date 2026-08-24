@@ -158,6 +158,14 @@ const stats = [
   ["Module 0", "Grievance is the entry point"],
 ];
 
+const sessionArc = [
+  "Grievance's ancient roots",
+  "The grievance loop",
+  "Fixing the grievance loop",
+  "The hidden gift",
+  "Model dialogues",
+];
+
 function SvgA() {
   return (
     <svg
@@ -411,10 +419,16 @@ function Index() {
           </div>
 
           <div className="mt-16 grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <p className="text-[19px] leading-[1.65] text-dark-foreground/70">
-              From inside the loop, it doesn’t feel like a loop. It feels like being right — which is
-              exactly why feedback bounces off it.
-            </p>
+            <div className="grid gap-6">
+              <p className="text-[19px] leading-[1.65] text-dark-foreground/70">
+                From inside the loop, it doesn’t feel like a loop. It feels like being right — which is
+                exactly why feedback bounces off it.
+              </p>
+              <p className="text-[19px] leading-[1.65] text-dark-foreground/70">
+                Decades of research land on the same finding: it’s the person holding the grievance who
+                pays for it, not the person it’s about.
+              </p>
+            </div>
             <p className="font-serif text-[clamp(24px,2.2vw,32px)] leading-[1.25]">
               Left alone, it stops being about the thing that happened and starts shaping how
               everyone around you behaves.
@@ -698,6 +712,41 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
+        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div>
+            <div className="eyebrow mb-6 text-primary">What’s Actually in It</div>
+            <h2 className="display mb-5 text-[clamp(30px,3.2vw,50px)] leading-[1.06]">
+              The Arc of the Sessions
+            </h2>
+            <p className="text-[17px] leading-relaxed text-body">
+              Not a conversation that wanders. The sessions run in an order, and each one is built on
+              published work.
+            </p>
+          </div>
+          <div>
+            <div className="border-t border-border">
+              {sessionArc.map((item, i) => (
+                <div
+                  key={item}
+                  className="flex justify-between gap-5 border-b border-border py-[18px]"
+                >
+                  <span className="label-caps text-subtle">
+                    {(i + 1).toString().padStart(2, "0")}
+                  </span>
+                  <span className="text-right text-base">{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-10 text-[15px] leading-relaxed text-subtle">
+              <span className="label-caps">Drawn from</span> · Dr. Fred Luskin, Forgive for Good ·
+              The Science of Revenge · The Age of Revenge · Steve Jobs in exile from Apple, 1985 ·
+              Dopamine Nation · Hidden Brain, “No Hard Feelings”
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
         <div className="border border-border px-8 py-14 md:px-16 md:py-18">
           <h2 className="display mb-5 max-w-[22em] text-[clamp(28px,3vw,46px)] leading-[1.06]">
             Two Honest Outcomes
@@ -753,16 +802,43 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-dark px-6 py-20 text-dark-foreground md:px-12 lg:py-28">
+      <section className="bg-surface px-6 py-20 md:px-12 lg:py-28">
         <div className="mx-auto max-w-[1440px]">
-          <div className="bg-dark px-8 py-12 md:px-12">
-            <div className="eyebrow mb-10 text-ember">The participant</div>
-            <blockquote className="mb-8 max-w-[28em] font-serif text-[clamp(26px,2.9vw,44px)] leading-[1.14] tracking-[-0.01em]">
-              “The grievance cloud lifted. And I stopped forming new ones. I feel the change in very
-              real terms.”
+          <div className="border-l-2 border-primary pl-8 md:pl-12">
+            <div className="eyebrow mb-6 text-subtle">The participant</div>
+            <blockquote className="mb-8 font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] tracking-[-0.01em] text-ink">
+              <p className="mb-8 text-[clamp(24px,2.6vw,38px)] leading-[1.2]">
+                "It’s like picking up dog shit your whole life, and your yard keeps getting bigger,
+                and one day someone tells you there never was a dog, and you’re free to leave."
+              </p>
+              <p className="mb-6">
+                "I came into this course with reasonable self-awareness and thought I’d worked through
+                most of my stuff. I had not. What Bijoy built is closer to surgery than self-help.
+                Session by session, he takes you through the mechanics of grievance — the courtroom of
+                your own mind, the faulty models underneath it, the evolutionary mismatch between the
+                machinery we’re running and the world we’re actually living in."
+              </p>
+              <p className="mb-6">
+                "There were three moments in particular I could never have arrived at unguided, where I
+                saw a logical fallacy in how I’d always interpreted the world — and once seen, there was
+                no going back. When you realize the delusion of using your mind as a tool it was never
+                designed to be, it frees you from a Sisyphean curse."
+              </p>
+              <p className="mb-6">
+                "The grievance cloud lifted. And I stopped forming new ones. I feel the change in very
+                real terms."
+              </p>
+              <p className="mb-6">
+                "And the course doesn’t leave you there. The final session turns relief into a way
+                forward: what used to become grievances now become signals that point to root causes,
+                with strategies to resolve the misalignment — often through better communication."
+              </p>
+              <p className="text-[clamp(22px,2.2vw,30px)] italic leading-[1.3]">
+                "What price do you put on learning to suffer less?"
+              </p>
             </blockquote>
-            <div className="text-sm font-medium uppercase tracking-[0.14em] text-dark-foreground/60">
-              — Chad A.
+            <div className="text-sm font-medium uppercase tracking-[0.14em] text-subtle">
+              — CHAD A.
             </div>
           </div>
         </div>
