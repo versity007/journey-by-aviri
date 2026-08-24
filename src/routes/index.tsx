@@ -1,21 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type { ComponentType } from "react";
+import { Fragment } from "react";
 import heroLoop from "@/assets/hero-loop.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "JOurneY — Remove Workplace Friction at Its Source in Seven Weeks" },
+      { title: "JOurneY — Stop the Loop That's Been Running Your Year" },
       {
         name: "description",
         content:
-          "A confidential six-session, 1-on-1 program for the one talented employee whose friction is shaping how everyone else behaves. Fixed container, no retainer.",
+          "A confidential six-session, one-on-one program for the person carrying a grievance that keeps replaying. Seven weeks, a fixed container, nothing reported back to anyone.",
       },
-      { property: "og:title", content: "JOurneY — Remove the Friction at Its Source" },
+      { property: "og:title", content: "JOurneY — You're Not Wrong. It's Still Running Your Year." },
       {
         property: "og:description",
         content:
-          "Six sessions across seven weeks, one-on-one. For managers, founders and exec teams dealing with one difficult person.",
+          "Six sessions across seven weeks, one-on-one, for the person carrying the grievance. Confidential — nothing is reported back to anyone.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -31,31 +31,96 @@ const loopSteps = [
   { n: "04", text: "Rehearsal makes it feel like fact." },
 ];
 
-const outcomes: {
-  n: string;
-  title: string;
-  body: string;
-  Svg?: ComponentType;
-  loopLabel?: string;
-  loopColor?: string;
-}[] = [
+const stations = [
+  {
+    Svg: SvgA,
+    voices: [
+      {
+        k: "Inside it",
+        lead: true,
+        paras: [
+          "I have the whole case. Dates, quotes, who said what and who was in the room. I can start anywhere in it and it comes out the same way. I’m not sulking and I’m not fragile — I’m right, and that’s the part that keeps getting missed.",
+          "What I don’t count is what it runs on. The drive in. The shower. Two in the morning. It’s been taking that from me for months and I’ve been calling it being clear-eyed.",
+        ],
+      },
+      {
+        k: "Next to it",
+        paras: [
+          "I’ve started going around it. I don’t raise the thing I know will set it off, I take the smaller ask to somebody else, and I tell myself that’s just being easy to work with. I’m not the only one doing it and none of us have said so out loud.",
+        ],
+      },
+      {
+        k: "Responsible for it",
+        paras: [
+          "I’ve listened, I’ve defended, I’ve told myself it would settle when the quarter did. I don’t have a move left that fits inside a one-on-one — and I’m not going to pretend I can reach in and change it from where I’m standing.",
+        ],
+      },
+    ],
+  },
+  {
+    Svg: SvgB,
+    voices: [
+      {
+        k: "Inside it",
+        lead: true,
+        paras: [
+          "Six sessions. Somebody asks me for the whole thing, in order, and doesn’t argue with any of it. Nobody tells me to let it go, and nobody suggests I’m the problem.",
+          "Somewhere in the telling I hear myself say the rule out loud — the rule that got broken. I’d never told anyone that rule. Including the person who broke it.",
+          "That’s the first time I’m looking at the loop instead of standing in it. The relief isn’t from being agreed with. It’s from finally seeing the shape of the thing that’s been eating my year.",
+        ],
+      },
+      {
+        k: "Next to it",
+        paras: [
+          "What I notice first isn’t an apology. The subject comes up and nothing happens — no edge, no case reopened, no second round. I stop rehearsing my half of it on the way in.",
+        ],
+      },
+      {
+        k: "Responsible for it",
+        paras: ["I stop being the sounding board. The conversations turn back into work."],
+      },
+    ],
+  },
+  {
+    Svg: SvgC,
+    voices: [
+      {
+        k: "Inside it",
+        lead: true,
+        paras: [
+          "The loop doesn’t go away, and I wouldn’t want it gone. I get to point it. The same engine that ran the case for six months runs at something I actually want to change, and I can hear the difference in how I talk in a room.",
+          "I also got the months back. That’s the part I didn’t expect — it wasn’t costing anyone else more than it was costing me.",
+        ],
+      },
+      {
+        k: "Next to it",
+        paras: [
+          "I bring the hard thing to them first now. Not because they’ve gone soft — because it gets solved instead of stored.",
+        ],
+      },
+      {
+        k: "Responsible for it",
+        paras: ["It held past the seven weeks. What I was managing around isn’t there to manage."],
+      },
+    ],
+  },
+];
+
+const outcomes = [
   {
     n: "01",
-    Svg: SvgC,
-    loopLabel: "Productive Loop",
-    loopColor: "text-loop-green",
     title: "A different loop in place of the old one",
-    body: "The grievance loop gets replaced with a productive one: gratitude instead of grinding, problem-solving instead of prosecuting. Same energy, redirected.",
+    body: "The grievance loop gets replaced by one you built: gratitude instead of grinding, problem-solving instead of prosecuting. Same engine, pointed somewhere useful.",
   },
   {
     n: "02",
     title: "A short list of what actually needs work",
-    body: "Grievances are precise. Each one points at something specific that is broken or unspoken — in how they communicate, what they expect, where they think the line is. They leave knowing which three or four things those are.",
+    body: "Grievances are precise. Each one points at something specific that’s broken or unspoken — in how you communicate, what you expect, where you think the line is. You leave knowing which three or four things those are.",
   },
   {
     n: "03",
-    title: "The ability to defuse it in other people",
-    body: "Once someone can see the loop running, they can see it running in colleagues, clients, and direct reports — and stop feeding it. This is the part that changes a team, not just a person.",
+    title: "The ability to see it running in other people",
+    body: "Once you can see the loop in yourself, you can see it in colleagues, clients and the people who report to you — and stop feeding it.",
   },
 ];
 
@@ -70,7 +135,7 @@ const notThis = [
   },
   {
     label: "Not performance management",
-    body: "Nothing from the sessions is reported back to you, and it shouldn’t be sold to the employee as a paper trail.",
+    body: "Nothing from the sessions is reported to anyone — not your manager, not HR. If this is being handed to you as a paper trail, it’s the wrong program and we’ll say so.",
   },
   {
     label: "Not a personality transplant",
@@ -84,7 +149,7 @@ const facts = [
   ["Before session one", "Prep week — reading and a first pass on paper"],
   ["Between sessions", "~2.5 hrs of reading and reflection"],
   ["After", "Daily practice, then a review call at week 10"],
-  ["Reported to you", "Nothing"],
+  ["Reported to anyone", "Nothing"],
 ];
 
 const stats = [
@@ -219,7 +284,6 @@ function SvgC() {
   );
 }
 
-
 function Index() {
   return (
     <div className="min-h-screen">
@@ -242,21 +306,21 @@ function Index() {
         <div>
           <div className="mb-8 flex items-center gap-3.5">
             <span className="h-px w-[34px] bg-primary" />
-            <span className="eyebrow text-primary">For managers, founders &amp; exec teams</span>
+            <span className="eyebrow text-primary">If something is still replaying</span>
           </div>
 
           <h1 className="display mb-6 max-w-[21em] text-[clamp(40px,4.8vw,78px)] leading-[0.99] tracking-[-0.015em]">
-            The Cost Isn’t One Difficult Person. It’s Everyone Working Around Them.
+            You’re Not Wrong. It’s Still Running Your Year.
           </h1>
           <p className="mb-8 font-serif text-[clamp(24px,2.3vw,34px)] italic leading-[1.15] text-primary">
-            Seven weeks, one-on-one, to remove the friction at its source.
+            Seven weeks, one-on-one, to stop the loop and get the hours back.
           </p>
 
           <p className="mb-6 max-w-[33em] text-[19px] leading-relaxed text-body">
-            JOurneY is a confidential program for a single employee — the talented one whose friction
-            has started shaping how everyone else behaves. They leave with a different response ready
-            for the next time something lands wrong, and the ability to spot the same pattern in the
-            people around them.
+            JOurneY is a confidential one-on-one program for one person. Six sessions with a trained
+            guide, working on the grievances you actually have, treated as legitimate — because they
+            usually are. You leave with a different response ready for the next time something lands
+            wrong, and the ability to see the same loop running in the people around you.
           </p>
           <p className="mb-9 max-w-[33em] text-base leading-relaxed text-subtle">
             Not therapy. Not coaching on retainer. A fixed container with a beginning, a middle, and
@@ -269,8 +333,7 @@ function Index() {
                 Right fit
               </div>
               <p className="text-base leading-[1.55] text-body">
-                A valuable person whose negativity is now affecting the team, after feedback has
-                already been tried.
+                Something that keeps replaying, that you’ve stopped expecting anyone else to fix.
               </p>
             </div>
             <div>
@@ -278,8 +341,8 @@ function Index() {
                 Wrong fit
               </div>
               <p className="text-base leading-[1.55] text-subtle">
-                A team workshop, a performance-management paper trail, or someone who needs clinical
-                care.
+                A team workshop, a performance-management paper trail, or clinical care. This isn’t
+                any of those.
               </p>
             </div>
           </div>
@@ -289,7 +352,7 @@ function Index() {
               href="#talk"
               className="inline-flex h-14 items-center rounded-sm bg-ink px-8 text-[15px] font-medium tracking-[0.02em] text-dark-foreground transition-colors hover:bg-primary"
             >
-              Talk to Us About One Person
+              Talk to Us
             </a>
             <a
               href="#experience"
@@ -311,66 +374,15 @@ function Index() {
         </div>
       </header>
 
-      <section className="mx-auto max-w-[1440px] border-t border-rule px-6 py-20 md:px-12 lg:py-28">
-        <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-          <h2 className="display text-[clamp(32px,3.4vw,52px)] leading-[1.06]">
-            You Already Know Who This Page Is About
-          </h2>
-          <div>
-            <p className="mb-6 text-[22px] leading-[1.55] text-ink">
-              They’re talented. You’ve defended them more than once. You don’t want to lose them.
-            </p>
-            <p className="mb-12 max-w-[38em] text-[19px] leading-[1.65] text-body">
-              But something has hardened, and the people around them have started working around it.
-            </p>
-
-            <div className="mb-11 border-t border-rule">
-              {[
-                "You gave the feedback. Carefully.",
-                "You asked what was really going on.",
-                "You changed what was in your power to change.",
-              ].map((line) => (
-                <div key={line} className="border-b border-rule py-5 text-[17px] text-body">
-                  {line}
-                </div>
-              ))}
-              <div className="border-b border-rule py-5 text-[17px] font-medium text-ink">
-                It held for a few weeks.
-              </div>
-            </div>
-
-            <p className="max-w-[26em] font-serif text-[clamp(26px,2.4vw,36px)] leading-[1.2]">
-              None of that failed because you did it badly.{" "}
-              <span className="text-primary">
-                It failed because the loop was never the subject of the conversation.
-              </span>
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-dark px-6 py-20 text-dark-foreground md:px-12 lg:py-28">
         <div className="mx-auto max-w-[1440px]">
-          <div className="mb-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <div>
-              <h2 className="display mb-5 max-w-[22em] text-[clamp(32px,3.6vw,56px)]">
-                Grievance Is Not a Character Flaw. It’s Standard Equipment Running Badly.
-              </h2>
-              <p className="max-w-[38em] text-[19px] leading-relaxed text-dark-foreground/60">
-                Every human being is issued the same machinery for handling being wronged. In most
-                people, most of the time, it runs unattended — and once it’s running, it keeps
-                running.
-              </p>
-            </div>
-            <figure className="bg-background px-8 py-10 text-ink">
-              <div className="mx-auto max-w-[420px]">
-                <SvgA />
-              </div>
-              <figcaption className="mt-6 font-serif text-3xl font-normal leading-[1.14] text-loop-red">
-                Grievance Loop
-              </figcaption>
-            </figure>
-          </div>
+          <h2 className="display mb-5 max-w-[22em] text-[clamp(32px,3.6vw,56px)]">
+            Grievance Is Not a Character Flaw. It’s Standard Equipment Running Badly.
+          </h2>
+          <p className="mb-16 max-w-[38em] text-[19px] leading-relaxed text-dark-foreground/60">
+            Every human being is issued the same machinery for handling being wronged. In most people,
+            most of the time, it runs unattended — and once it’s running, it keeps running.
+          </p>
 
           <div className="grid gap-px border-y border-rule-invert bg-rule-invert sm:grid-cols-2 xl:grid-cols-4">
             {loopSteps.map((s) => (
@@ -397,9 +409,81 @@ function Index() {
               exactly why feedback bounces off it.
             </p>
             <p className="font-serif text-[clamp(24px,2.2vw,32px)] leading-[1.25]">
-              Left alone, one person’s loop becomes the team’s weather.
+              Left alone, it stops being about the thing that happened and starts shaping how
+              everyone around you behaves.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
+        <div className="mb-20 flex flex-wrap items-end justify-between gap-8">
+          <h2 className="display max-w-[20em] text-[clamp(32px,3.6vw,56px)]">
+            One Loop, Three Places to Be Standing
+          </h2>
+          <p className="max-w-[26em] text-[17px] leading-relaxed text-body">
+            The same situation, from each place you can be standing in it.
+          </p>
+        </div>
+
+        <div className="grid gap-24 lg:gap-32">
+          {stations.map((s, i) => (
+            <Fragment key={i}>
+              {i === 1 && (
+                <div className="flex items-center gap-5">
+                  <span aria-hidden="true" className="h-px flex-1 bg-border" />
+                  <p className="max-w-[44em] text-center text-xs font-medium uppercase tracking-[0.18em] text-subtle">
+                    None of this is a character flaw. It’s one loop, running, and everyone near it
+                    has quietly rearranged themselves around it. Only one person can do anything
+                    about it, and it’s the one standing inside.
+                  </p>
+                  <span aria-hidden="true" className="h-px flex-1 bg-border" />
+                </div>
+              )}
+              <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+                <div className="mx-auto w-full max-w-[420px]">
+                  <s.Svg />
+                </div>
+                <div className="grid gap-9">
+                  {s.voices.map((v) => (
+                    <div key={v.k}>
+                      <div className="label-caps mb-3 text-subtle">{v.k}</div>
+                      {v.paras.map((p, pi) => (
+                        <p
+                          key={pi}
+                          className={
+                            v.lead
+                              ? "mb-4 text-[19px] leading-[1.7] text-ink last:mb-0"
+                              : "text-[17px] leading-[1.65] text-body"
+                          }
+                        >
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Fragment>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
+        <div className="max-w-[44em]">
+          <h2 className="display mb-8 text-[clamp(32px,3.4vw,52px)] leading-[1.06]">
+            Your Call, Nobody Else’s
+          </h2>
+          <p className="mb-6 text-[19px] leading-[1.7] text-body">
+            Nobody can put you in this. A company can pay for it — plenty do — but the enrolling is
+            yours, and if you don’t want the loop gone, six sessions won’t move it. That isn’t a
+            policy we bolted on. It’s how the work functions.
+          </p>
+          <p className="text-[19px] leading-[1.7] text-body">
+            Nothing from the sessions goes back to anyone. Not a summary, not a temperature check,
+            not a yes or no. If somebody handed you this page, they can pay and they can wait.
+            That’s the whole of what they get to do.
+          </p>
         </div>
       </section>
 
@@ -417,18 +501,6 @@ function Index() {
               <div className="mb-6 text-[11px] font-semibold tracking-[0.2em] text-primary">
                 {o.n}
               </div>
-              {o.Svg && (
-                <figure className="mb-8">
-                  <div className="w-full max-w-[420px]">
-                    <o.Svg />
-                  </div>
-                  <figcaption
-                    className={`mt-4 font-serif text-3xl font-normal leading-[1.14] ${o.loopColor}`}
-                  >
-                    {o.loopLabel}
-                  </figcaption>
-                </figure>
-              )}
               <h3 className="mb-4 font-serif text-3xl font-normal leading-[1.14]">{o.title}</h3>
               <p className="text-[17px] leading-[1.65] text-body">{o.body}</p>
             </div>
@@ -480,8 +552,8 @@ function Index() {
               way of seeing patterns that people can keep using long after these weeks end.
             </p>
             <p className="text-[19px] leading-[1.7] text-body">
-              The method isn’t taught in a classroom sense. It’s run on the participant’s behalf by a
-              trained guide, so they get the result without having to first learn the instrument.
+              The method isn’t taught in a classroom sense. It’s run on your behalf by a trained
+              guide, so you get the result without having to learn the instrument first.
             </p>
 
             <div className="mt-3 grid gap-px border-y border-border bg-border sm:grid-cols-3">
@@ -520,33 +592,20 @@ function Index() {
             </div>
             <div className="grid gap-7">
               <h3 className="font-serif text-[clamp(24px,2.2vw,32px)] leading-[1.2]">
-                What it’s like for them
+                What it’s like
               </h3>
-              <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
-                <div className="grid gap-7">
-                  <p className="text-[19px] leading-[1.7] text-body">
-                    Nobody is asked to be more positive, more open, or ready to grow. We start with
-                    the grievances exactly as they are, treated as legitimate, because they usually
-                    are.
-                  </p>
-                  <p className="text-[19px] leading-[1.7] text-body">
-                    What changes is that they get to see the machinery from the outside. Most people
-                    describe the weight coming off before they can describe why.
-                  </p>
-                  <p className="text-[19px] leading-[1.7] text-body">
-                    Work grievances and personal ones both come up, because people don’t sort
-                    themselves that neatly. It stays confidential either way.
-                  </p>
-                </div>
-                <figure className="bg-background px-6 py-8">
-                  <div className="mx-auto max-w-[420px]">
-                    <SvgB />
-                  </div>
-                  <figcaption className="mt-5 font-serif text-3xl font-normal leading-[1.14] text-loop-amber">
-                    Forgiveness Loop
-                  </figcaption>
-                </figure>
-              </div>
+              <p className="text-[19px] leading-[1.7] text-body">
+                Nobody asks you to be more positive, more open, or ready to grow. We start with your
+                grievances exactly as they are, treated as legitimate, because they usually are.
+              </p>
+              <p className="text-[19px] leading-[1.7] text-body">
+                What changes is that you get to see the machinery from the outside. Most people
+                describe the weight coming off before they can describe why.
+              </p>
+              <p className="text-[19px] leading-[1.7] text-body">
+                Work grievances and personal ones both come up, because people don’t sort themselves
+                that neatly. It stays confidential either way.
+              </p>
             </div>
           </div>
         </div>
@@ -568,12 +627,12 @@ function Index() {
                 Most often
               </div>
               <p className="mb-4 font-serif text-[clamp(24px,2.2vw,32px)] leading-[1.2]">
-                They stay, and the weather changes.
+                You stay, and it stops costing you.
               </p>
               <p className="text-base leading-relaxed text-body">
-                The person you hired is still in there. Once the loop stops running, they come back —
-                usually with more to give than before, because it was costing them more than it was
-                costing you.
+                The loop stops running and the job stops being the place where it replays. Most
+                people find they have more to give than before, because it was costing them more
+                than it was costing anyone else.
               </p>
             </div>
             <div className="flex items-center text-sm font-medium uppercase tracking-[0.16em] text-faint">
@@ -584,10 +643,10 @@ function Index() {
                 Sometimes
               </div>
               <p className="mb-4 font-serif text-[clamp(24px,2.2vw,32px)] leading-[1.2]">
-                They see clearly that this isn’t the right seat, and they go.
+                You see clearly that this isn’t the right seat, and you go.
               </p>
               <p className="text-base leading-relaxed text-body">
-                Cleanly, on their own terms, without the long resentful exit. That’s not a failure of
+                Cleanly, on your own terms, without the long resentful exit. That’s not a failure of
                 the work — it’s the answer arriving in seven weeks instead of two years.
               </p>
             </div>
@@ -598,7 +657,7 @@ function Index() {
               Either way
             </span>
             <p className="min-w-[280px] flex-1 font-serif text-[clamp(24px,2.3vw,34px)] leading-[1.22]">
-              The thing that has been quietly costing you both stops.
+              The thing that’s been quietly costing you stops.
             </p>
           </div>
 
@@ -651,24 +710,27 @@ function Index() {
         className="mx-auto max-w-[1440px] px-6 py-20 text-center md:px-12 lg:py-28"
       >
         <h2 className="display mx-auto mb-5 max-w-[20em] text-[clamp(34px,4.4vw,72px)] leading-[1.02] tracking-[-0.015em]">
-          You’ve Been Managing Around This Long Enough.
+          You’ve Been Carrying This Long Enough.
         </h2>
         <p className="mx-auto mb-10 font-serif text-[clamp(22px,2.2vw,32px)] italic text-primary">
           Seven weeks is shorter than the last quarter you spent hoping it would settle.
         </p>
         <p className="mx-auto mb-13 max-w-[40em] text-[19px] leading-[1.65] text-body">
-          Tell us what’s happening with the person you had in mind when you started reading. If
-          JOurneY isn’t right for them, we’ll say so — that conversation costs nothing and tends to
-          clarify plenty.
+          Tell us what’s been replaying. If JOurneY isn’t right for you, we’ll say so — that
+          conversation costs nothing and tends to clarify plenty.
         </p>
         <div className="flex justify-center">
           <a
             href="#talk"
             className="inline-flex h-[58px] items-center rounded-sm bg-ink px-9 text-[15px] font-medium tracking-[0.02em] text-dark-foreground transition-colors hover:bg-primary"
           >
-            Talk to Us About One Person
+            Talk to Us
           </a>
         </div>
+        <p className="mx-auto mt-8 max-w-[36em] text-sm leading-relaxed text-subtle">
+          Paying for someone else? You can cover it. They enroll themselves — that part isn’t yours
+          to do.
+        </p>
       </section>
 
       <footer className="mx-auto flex max-w-[1440px] flex-wrap justify-between gap-6 border-t border-rule px-6 py-10 md:px-12">
