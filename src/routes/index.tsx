@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Fragment } from "react";
+import type { ComponentType } from "react";
 import heroLoop from "@/assets/hero-loop.jpg";
 
 export const Route = createFileRoute("/")({
@@ -31,9 +31,19 @@ const loopSteps = [
   { n: "04", text: "Rehearsal makes it feel like fact." },
 ];
 
-const outcomes = [
+const outcomes: {
+  n: string;
+  title: string;
+  body: string;
+  Svg?: ComponentType;
+  loopLabel?: string;
+  loopColor?: string;
+}[] = [
   {
     n: "01",
+    Svg: SvgC,
+    loopLabel: "Productive Loop",
+    loopColor: "text-loop-green",
     title: "A different loop in place of the old one",
     body: "The grievance loop gets replaced with a productive one: gratitude instead of grinding, problem-solving instead of prosecuting. Same energy, redirected.",
   },
@@ -81,30 +91,6 @@ const stats = [
   ["25 yrs", "Developing the underlying method"],
   ["1-on-1", "Never a workshop or a cohort"],
   ["Module 0", "Grievance is the entry point"],
-];
-
-const threeLoops = [
-  {
-    Svg: SvgA,
-    colorClass: "text-loop-red",
-    n: "01",
-    kicker: "The case",
-    label: "Grievance Loop",
-  },
-  {
-    Svg: SvgB,
-    colorClass: "text-loop-amber",
-    n: "02",
-    kicker: "The interview",
-    label: "Forgiveness Loop",
-  },
-  {
-    Svg: SvgC,
-    colorClass: "text-loop-green",
-    n: "03",
-    kicker: "The new loop",
-    label: "Productive Loop",
-  },
 ];
 
 function SvgA() {
@@ -365,13 +351,26 @@ function Index() {
 
       <section className="bg-dark px-6 py-20 text-dark-foreground md:px-12 lg:py-28">
         <div className="mx-auto max-w-[1440px]">
-          <h2 className="display mb-5 max-w-[22em] text-[clamp(32px,3.6vw,56px)]">
-            Grievance Is Not a Character Flaw. It’s Standard Equipment Running Badly.
-          </h2>
-          <p className="mb-16 max-w-[38em] text-[19px] leading-relaxed text-dark-foreground/60">
-            Every human being is issued the same machinery for handling being wronged. In most people,
-            most of the time, it runs unattended — and once it’s running, it keeps running.
-          </p>
+          <div className="mb-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            <div>
+              <h2 className="display mb-5 max-w-[22em] text-[clamp(32px,3.6vw,56px)]">
+                Grievance Is Not a Character Flaw. It’s Standard Equipment Running Badly.
+              </h2>
+              <p className="max-w-[38em] text-[19px] leading-relaxed text-dark-foreground/60">
+                Every human being is issued the same machinery for handling being wronged. In most
+                people, most of the time, it runs unattended — and once it’s running, it keeps
+                running.
+              </p>
+            </div>
+            <figure className="bg-background px-8 py-10 text-ink">
+              <div className="mx-auto max-w-[420px]">
+                <SvgA />
+              </div>
+              <figcaption className="mt-6 font-serif text-3xl font-normal leading-[1.14] text-loop-red">
+                Grievance Loop
+              </figcaption>
+            </figure>
+          </div>
 
           <div className="grid gap-px border-y border-rule-invert bg-rule-invert sm:grid-cols-2 xl:grid-cols-4">
             {loopSteps.map((s) => (
@@ -404,42 +403,6 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 lg:py-40">
-        <div className="mb-20 flex flex-wrap items-end justify-between gap-8">
-          <h2 className="display max-w-[20em] text-[clamp(32px,3.6vw,56px)]">Three Loops</h2>
-          <p className="max-w-[26em] text-[17px] leading-relaxed text-body">
-            The same energy, in three different relationships to it.
-          </p>
-        </div>
-
-        <div className="relative">
-          <span aria-hidden="true" className="absolute top-[5px] right-0 left-0 hidden h-px bg-border lg:block" />
-          <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
-            {threeLoops.map((l, i) => (
-              <Fragment key={l.label}>
-                <div className="pb-10">
-                  <div
-                    className={`relative mb-3 inline-block bg-background pr-5 text-[11px] font-semibold tracking-[0.22em] ${l.colorClass}`}
-                  >
-                    {l.n}
-                  </div>
-                  <div className="label-caps mb-10 text-subtle">{l.kicker}</div>
-                  <div className="mb-10 min-h-[260px]">
-                    <l.Svg />
-                  </div>
-                  <h3 className={`mb-3 font-serif text-3xl font-normal leading-[1.14] ${l.colorClass}`}>
-                    {l.label}
-                  </h3>
-                </div>
-                {i < threeLoops.length - 1 && (
-                  <span aria-hidden="true" className="mx-auto block h-8 w-px bg-border lg:hidden" />
-                )}
-              </Fragment>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
         <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
           <h2 className="display max-w-[20em] text-[clamp(32px,3.6vw,56px)]">What You Get Back</h2>
@@ -454,6 +417,18 @@ function Index() {
               <div className="mb-6 text-[11px] font-semibold tracking-[0.2em] text-primary">
                 {o.n}
               </div>
+              {o.Svg && (
+                <figure className="mb-8">
+                  <div className="w-full max-w-[420px]">
+                    <o.Svg />
+                  </div>
+                  <figcaption
+                    className={`mt-4 font-serif text-3xl font-normal leading-[1.14] ${o.loopColor}`}
+                  >
+                    {o.loopLabel}
+                  </figcaption>
+                </figure>
+              )}
               <h3 className="mb-4 font-serif text-3xl font-normal leading-[1.14]">{o.title}</h3>
               <p className="text-[17px] leading-[1.65] text-body">{o.body}</p>
             </div>
@@ -547,18 +522,31 @@ function Index() {
               <h3 className="font-serif text-[clamp(24px,2.2vw,32px)] leading-[1.2]">
                 What it’s like for them
               </h3>
-              <p className="text-[19px] leading-[1.7] text-body">
-                Nobody is asked to be more positive, more open, or ready to grow. We start with the
-                grievances exactly as they are, treated as legitimate, because they usually are.
-              </p>
-              <p className="text-[19px] leading-[1.7] text-body">
-                What changes is that they get to see the machinery from the outside. Most people
-                describe the weight coming off before they can describe why.
-              </p>
-              <p className="text-[19px] leading-[1.7] text-body">
-                Work grievances and personal ones both come up, because people don’t sort themselves
-                that neatly. It stays confidential either way.
-              </p>
+              <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
+                <div className="grid gap-7">
+                  <p className="text-[19px] leading-[1.7] text-body">
+                    Nobody is asked to be more positive, more open, or ready to grow. We start with
+                    the grievances exactly as they are, treated as legitimate, because they usually
+                    are.
+                  </p>
+                  <p className="text-[19px] leading-[1.7] text-body">
+                    What changes is that they get to see the machinery from the outside. Most people
+                    describe the weight coming off before they can describe why.
+                  </p>
+                  <p className="text-[19px] leading-[1.7] text-body">
+                    Work grievances and personal ones both come up, because people don’t sort
+                    themselves that neatly. It stays confidential either way.
+                  </p>
+                </div>
+                <figure className="bg-background px-6 py-8">
+                  <div className="mx-auto max-w-[420px]">
+                    <SvgB />
+                  </div>
+                  <figcaption className="mt-5 font-serif text-3xl font-normal leading-[1.14] text-loop-amber">
+                    Forgiveness Loop
+                  </figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
