@@ -351,13 +351,26 @@ function Index() {
 
       <section className="bg-dark px-6 py-20 text-dark-foreground md:px-12 lg:py-28">
         <div className="mx-auto max-w-[1440px]">
-          <h2 className="display mb-5 max-w-[22em] text-[clamp(32px,3.6vw,56px)]">
-            Grievance Is Not a Character Flaw. It’s Standard Equipment Running Badly.
-          </h2>
-          <p className="mb-16 max-w-[38em] text-[19px] leading-relaxed text-dark-foreground/60">
-            Every human being is issued the same machinery for handling being wronged. In most people,
-            most of the time, it runs unattended — and once it’s running, it keeps running.
-          </p>
+          <div className="mb-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            <div>
+              <h2 className="display mb-5 max-w-[22em] text-[clamp(32px,3.6vw,56px)]">
+                Grievance Is Not a Character Flaw. It’s Standard Equipment Running Badly.
+              </h2>
+              <p className="max-w-[38em] text-[19px] leading-relaxed text-dark-foreground/60">
+                Every human being is issued the same machinery for handling being wronged. In most
+                people, most of the time, it runs unattended — and once it’s running, it keeps
+                running.
+              </p>
+            </div>
+            <figure className="bg-background px-8 py-10 text-ink">
+              <div className="mx-auto max-w-[420px]">
+                <SvgA />
+              </div>
+              <figcaption className="mt-6 font-serif text-3xl font-normal leading-[1.14] text-loop-red">
+                Grievance Loop
+              </figcaption>
+            </figure>
+          </div>
 
           <div className="grid gap-px border-y border-rule-invert bg-rule-invert sm:grid-cols-2 xl:grid-cols-4">
             {loopSteps.map((s) => (
@@ -386,42 +399,6 @@ function Index() {
             <p className="font-serif text-[clamp(24px,2.2vw,32px)] leading-[1.25]">
               Left alone, one person’s loop becomes the team’s weather.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 lg:py-40">
-        <div className="mb-20 flex flex-wrap items-end justify-between gap-8">
-          <h2 className="display max-w-[20em] text-[clamp(32px,3.6vw,56px)]">Three Loops</h2>
-          <p className="max-w-[26em] text-[17px] leading-relaxed text-body">
-            The same energy, in three different relationships to it.
-          </p>
-        </div>
-
-        <div className="relative">
-          <span aria-hidden="true" className="absolute top-[5px] right-0 left-0 hidden h-px bg-border lg:block" />
-          <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
-            {threeLoops.map((l, i) => (
-              <Fragment key={l.label}>
-                <div className="pb-10">
-                  <div
-                    className={`relative mb-3 inline-block bg-background pr-5 text-[11px] font-semibold tracking-[0.22em] ${l.colorClass}`}
-                  >
-                    {l.n}
-                  </div>
-                  <div className="label-caps mb-10 text-subtle">{l.kicker}</div>
-                  <div className="mb-10 min-h-[260px]">
-                    <l.Svg />
-                  </div>
-                  <h3 className={`mb-3 font-serif text-3xl font-normal leading-[1.14] ${l.colorClass}`}>
-                    {l.label}
-                  </h3>
-                </div>
-                {i < threeLoops.length - 1 && (
-                  <span aria-hidden="true" className="mx-auto block h-8 w-px bg-border lg:hidden" />
-                )}
-              </Fragment>
-            ))}
           </div>
         </div>
       </section>
