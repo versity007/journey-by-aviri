@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Fragment } from "react";
+import type { ComponentType } from "react";
 import heroLoop from "@/assets/hero-loop.jpg";
 
 export const Route = createFileRoute("/")({
@@ -31,9 +31,19 @@ const loopSteps = [
   { n: "04", text: "Rehearsal makes it feel like fact." },
 ];
 
-const outcomes = [
+const outcomes: {
+  n: string;
+  title: string;
+  body: string;
+  Svg?: ComponentType;
+  loopLabel?: string;
+  loopColor?: string;
+}[] = [
   {
     n: "01",
+    Svg: SvgC,
+    loopLabel: "Productive Loop",
+    loopColor: "text-loop-green",
     title: "A different loop in place of the old one",
     body: "The grievance loop gets replaced with a productive one: gratitude instead of grinding, problem-solving instead of prosecuting. Same energy, redirected.",
   },
@@ -81,30 +91,6 @@ const stats = [
   ["25 yrs", "Developing the underlying method"],
   ["1-on-1", "Never a workshop or a cohort"],
   ["Module 0", "Grievance is the entry point"],
-];
-
-const threeLoops = [
-  {
-    Svg: SvgA,
-    colorClass: "text-loop-red",
-    n: "01",
-    kicker: "The case",
-    label: "Grievance Loop",
-  },
-  {
-    Svg: SvgB,
-    colorClass: "text-loop-amber",
-    n: "02",
-    kicker: "The interview",
-    label: "Forgiveness Loop",
-  },
-  {
-    Svg: SvgC,
-    colorClass: "text-loop-green",
-    n: "03",
-    kicker: "The new loop",
-    label: "Productive Loop",
-  },
 ];
 
 function SvgA() {
