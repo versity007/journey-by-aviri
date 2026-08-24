@@ -158,6 +158,14 @@ const stats = [
   ["Module 0", "Grievance is the entry point"],
 ];
 
+const sessionArc = [
+  "Grievance's ancient roots",
+  "The grievance loop",
+  "Fixing the grievance loop",
+  "The hidden gift",
+  "Model dialogues",
+];
+
 function SvgA() {
   return (
     <svg
@@ -411,10 +419,16 @@ function Index() {
           </div>
 
           <div className="mt-16 grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <p className="text-[19px] leading-[1.65] text-dark-foreground/70">
-              From inside the loop, it doesn’t feel like a loop. It feels like being right — which is
-              exactly why feedback bounces off it.
-            </p>
+            <div className="grid gap-6">
+              <p className="text-[19px] leading-[1.65] text-dark-foreground/70">
+                From inside the loop, it doesn’t feel like a loop. It feels like being right — which is
+                exactly why feedback bounces off it.
+              </p>
+              <p className="text-[19px] leading-[1.65] text-dark-foreground/70">
+                Decades of research land on the same finding: it’s the person holding the grievance who
+                pays for it, not the person it’s about.
+              </p>
+            </div>
             <p className="font-serif text-[clamp(24px,2.2vw,32px)] leading-[1.25]">
               Left alone, it stops being about the thing that happened and starts shaping how
               everyone around you behaves.
