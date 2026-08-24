@@ -414,10 +414,10 @@ function Index() {
 
         <div className="relative">
           <span aria-hidden="true" className="absolute top-[5px] right-0 left-0 hidden h-px bg-border lg:block" />
-          <div className="grid gap-14 lg:grid-cols-3 lg:gap-12">
+          <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
             {threeLoops.map((l, i) => (
               <Fragment key={l.label}>
-                <div>
+                <div className="pb-10">
                   <div
                     className={`relative mb-3 inline-block bg-background pr-5 text-[11px] font-semibold tracking-[0.22em] ${l.colorClass}`}
                   >
@@ -432,7 +432,7 @@ function Index() {
                   </h3>
                 </div>
                 {i < threeLoops.length - 1 && (
-                  <span aria-hidden="true" className="mx-auto block h-14 w-px bg-border lg:hidden" />
+                  <span aria-hidden="true" className="mx-auto block h-8 w-px bg-border lg:hidden" />
                 )}
               </Fragment>
             ))}
