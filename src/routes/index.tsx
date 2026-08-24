@@ -494,6 +494,85 @@ function Index() {
         </div>
       </section>
 
+      <section id="for-the-one-paying" className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
+        <div className="max-w-[44em]">
+          <div className="eyebrow mb-6 text-primary">If You’re the One Paying</div>
+          <h2 className="display mb-8 text-[clamp(32px,3.4vw,52px)] leading-[1.06]">
+            You Can Cover It. You Can’t Enroll Them.
+          </h2>
+          <p className="mb-10 text-[19px] leading-[1.7] text-body">
+            Most people find this page themselves. Some are pointed at it by a manager who has run out of
+            moves that fit inside a one-on-one — and if that’s you, here is the honest shape of what
+            you can do.
+          </p>
+
+          <div className="border-t border-border">
+            <div className="flex justify-between gap-5 border-b border-border py-[18px]">
+              <span className="label-caps text-subtle">What You Can Do</span>
+              <span className="text-right text-base">Pay for it, and send the link</span>
+            </div>
+            <div className="flex justify-between gap-5 border-b border-border py-[18px]">
+              <span className="label-caps text-subtle">What Only They Can Do</span>
+              <span className="text-right text-base">Decide to enroll, and do the work</span>
+            </div>
+            <div className="flex justify-between gap-5 border-b border-border py-[18px]">
+              <span className="label-caps text-subtle">What Comes Back to You</span>
+              <span className="text-right text-base">Nothing. No summary, no progress note, no yes or no</span>
+            </div>
+            <div className="flex justify-between gap-5 border-b border-border py-[18px]">
+              <span className="label-caps text-subtle">Format</span>
+              <span className="text-right text-base">Six one-hour sessions over seven weeks, one-on-one, plus a review call at week ten</span>
+            </div>
+            <div className="flex justify-between gap-5 border-b border-border py-[18px]">
+              <span className="label-caps text-subtle">If It’s Not Right</span>
+              <span className="text-right text-base">We’ll tell you before anyone pays</span>
+            </div>
+            <div className="flex justify-between gap-5 border-b border-border py-[18px]">
+              <span className="label-caps text-subtle">Refund</span>
+              <span className="text-right text-base">Full refund any time before Session 4, no conversation required</span>
+            </div>
+          </div>
+
+          <p className="mt-10 text-[19px] leading-[1.7] text-body">
+            It only works when the person chooses it, which means the most useful thing you can do is
+            make it available and then leave the choice alone. Send it, cover it, and let them decide.
+          </p>
+
+          <a
+            href="#talk"
+            className="mt-10 inline-flex h-14 items-center rounded-sm border border-ink px-8 text-[15px] font-medium tracking-[0.02em] text-ink transition-colors hover:bg-ink hover:text-dark-foreground"
+          >
+            Talk to Us About Covering Someone
+          </a>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1440px] px-6 py-8 md:px-12">
+        <div className="border-l-2 border-primary pl-8 md:pl-12">
+          <div className="eyebrow mb-6 text-subtle">The manager</div>
+          <blockquote className="mb-8 font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] tracking-[-0.01em] text-ink">
+            <p className="mb-6">
+              “One of our top leaders had been in a foul mood for months. I spent a lot of time sitting
+              with him and listening as he developed a growing list of grievances both at home and at
+              work. I wanted to help, but ultimately, the best I could do was be a sounding board.
+            </p>
+            <p className="mb-6">
+              When I learned about Aviri’s JOurneY of Grievance Experience, I thought it might be worth
+              a try. My colleague agreed to enroll in the coursework and before long, I began noticing a
+              positive shift in his mood, his approach to life, and, perhaps most importantly, his sense
+              of accountability.
+            </p>
+            <p>
+              After he completed the coursework, we both saw enough value in the experience that we
+              decided to continue working with Bijoy together, this time as a team of three.”
+            </p>
+          </blockquote>
+          <div className="text-sm font-medium uppercase tracking-[0.14em] text-subtle">
+            — Steve G.
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
         <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
           <h2 className="display max-w-[20em] text-[clamp(32px,3.6vw,56px)]">What You Get Back</h2>
