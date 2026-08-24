@@ -9,13 +9,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A confidential six-session, one-on-one program for the person carrying a grievance that keeps replaying. Seven weeks, a fixed container, nothing reported back to anyone.",
+          "A confidential seven-session, one-on-one program for the person carrying a grievance that keeps replaying. Seven weeks, a fixed container, nothing reported back to anyone.",
       },
       { property: "og:title", content: "JOurneY — You're Not Wrong. It's Still Running Your Year." },
       {
         property: "og:description",
         content:
-          "Six sessions across seven weeks, one-on-one, for the person carrying the grievance. Confidential — nothing is reported back to anyone.",
+          "Seven sessions across seven weeks, one-on-one, for the person carrying the grievance. Confidential — nothing is reported back to anyone.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -64,7 +64,7 @@ const stations = [
         k: "Inside it",
         lead: true,
         paras: [
-          "Six sessions. Somebody asks me for the whole thing, in order, and doesn’t argue with any of it. Nobody tells me to let it go, and nobody suggests I’m the problem.",
+          "Seven sessions. Somebody asks me for the whole thing, in order, and doesn’t argue with any of it. Nobody tells me to let it go, and nobody suggests I’m the problem.",
           "Somewhere in the telling I hear myself say the rule out loud — the rule that got broken. I’d never told anyone that rule. Including the person who broke it.",
           "That’s the first time I’m looking at the loop instead of standing in it. The relief isn’t from being agreed with. It’s from finally seeing the shape of the thing that’s been eating my year.",
         ],
@@ -131,7 +131,7 @@ const notThis = [
   },
   {
     label: "Not coaching on retainer",
-    body: "Six sessions, then it ends. No open-ended hourly relationship and no dependency by design.",
+    body: "Seven sessions, then it ends. No open-ended hourly relationship and no dependency by design.",
   },
   {
     label: "Not performance management",
@@ -145,7 +145,7 @@ const notThis = [
 
 const facts = [
   ["Format", "Confidential 1-on-1"],
-  ["Sessions", "6 × 1 hour, with a trained guide"],
+  ["Sessions", "7 × 1 hour, with a trained guide"],
   ["Before session one", "Prep week — reading and a first pass on paper"],
   ["Between sessions", "~2.5 hrs of reading and reflection"],
   ["After", "Daily practice, then a review call at week 10"],
@@ -325,7 +325,7 @@ function Index() {
           </p>
 
           <p className="mb-6 max-w-[33em] text-[19px] leading-relaxed text-body">
-            JOurneY is a confidential one-on-one program for one person. Six sessions with a trained
+            JOurneY is a confidential one-on-one program for one person. Seven sessions with a trained
             guide, working on the grievances you actually have, treated as legitimate — because they
             usually are. You leave with a different response ready for the next time something lands
             wrong, and the ability to see the same loop running in the people around you.
@@ -497,7 +497,7 @@ function Index() {
           </h2>
           <p className="mb-6 text-[19px] leading-[1.7] text-body">
             Nobody can put you in this. A company can pay for it — plenty do — but the enrolling is
-            yours, and if you don’t want the loop gone, six sessions won’t move it. That isn’t a
+            yours, and if you don’t want the loop gone, seven sessions won’t move it. That isn’t a
             policy we bolted on. It’s how the work functions.
           </p>
           <p className="text-[19px] leading-[1.7] text-body">
@@ -535,7 +535,7 @@ function Index() {
             </div>
             <div className="flex justify-between gap-5 border-b border-border py-[18px]">
               <span className="label-caps text-subtle">Format</span>
-              <span className="text-right text-base">Six one-hour sessions over seven weeks, one-on-one, plus a review call at week ten</span>
+              <span className="text-right text-base">Seven one-hour sessions over seven weeks, one-on-one, plus a review call at week ten</span>
             </div>
             <div className="flex justify-between gap-5 border-b border-border py-[18px]">
               <span className="label-caps text-subtle">If It’s Not Right</span>
@@ -676,7 +676,7 @@ function Index() {
             <div>
               <div className="eyebrow mb-6 text-primary">The Experience</div>
               <h2 className="display mb-8 text-[clamp(30px,3.2vw,50px)] leading-[1.06]">
-                Six sessions across seven weeks. A follow-up three weeks later.
+                Seven sessions across seven weeks. A follow-up three weeks later.
               </h2>
               <div className="border-t border-border">
                 {facts.map(([k, v]) => (
@@ -825,6 +825,13 @@ function Index() {
                 designed to be, it frees you from a Sisyphean curse."
               </p>
               <p className="mb-6">
+                "First: the models I’d assumed were proxies of reality don’t hold enough information to be
+                trusted. Second: the capacity of the mind is minute compared to the scope of things to be
+                aggrieved about, so any attempt to scale that process is doomed to end in arbitrary
+                decisions and failure. Third: there are systems designed to scale to the level of
+                societal conflict, and they don’t belong in our individual minds."
+              </p>
+              <p className="mb-6">
                 "The grievance cloud lifted. And I stopped forming new ones. I feel the change in very
                 real terms."
               </p>
@@ -832,6 +839,11 @@ function Index() {
                 "And the course doesn’t leave you there. The final session turns relief into a way
                 forward: what used to become grievances now become signals that point to root causes,
                 with strategies to resolve the misalignment — often through better communication."
+              </p>
+              <p className="mb-6">
+                "Bijoy has built on the body of work that came before him and done something few others
+                have: reduced concepts that had been purely theoretical to practical scientific models
+                you can actually inspect and change."
               </p>
               <p className="text-[clamp(22px,2.2vw,30px)] italic leading-[1.3]">
                 "What price do you put on learning to suffer less?"
