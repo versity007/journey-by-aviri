@@ -356,6 +356,29 @@ function Index() {
 
       <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
         <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
+          <h2 className="display max-w-[20em] text-[clamp(32px,3.6vw,56px)]">Three Loops</h2>
+          <p className="max-w-[26em] text-[17px] leading-relaxed text-body">
+            The same energy, in three different relationships to it.
+          </p>
+        </div>
+
+        <div className="grid gap-px border-y border-border bg-border lg:grid-cols-3">
+          {threeLoops.map((l) => (
+            <div key={l.label} className="bg-background px-8 pt-10 pb-12">
+              <div className="mb-8">
+                <LoopSvg variant={l.variant} colorClass={l.colorClass} label={l.label} />
+              </div>
+              <h3 className={`mb-3 font-serif text-3xl font-normal leading-[1.14] ${l.colorClass}`}>
+                {l.label}
+              </h3>
+              <p className="text-[17px] leading-[1.65] text-body">{l.caption}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
+        <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
           <h2 className="display max-w-[20em] text-[clamp(32px,3.6vw,56px)]">What You Get Back</h2>
           <p className="max-w-[26em] text-[17px] leading-relaxed text-body">
             Three outcomes, in the order they tend to arrive.
