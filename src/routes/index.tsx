@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useId } from "react";
 import heroLoop from "@/assets/hero-loop.jpg";
 
 export const Route = createFileRoute("/")({
