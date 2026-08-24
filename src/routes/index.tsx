@@ -110,133 +110,132 @@ const threeLoops = [
   },
 ];
 
-// Shared geometry: one coil of five hand-sketched ellipse strokes and one
-// figure pictogram, reused across all three panels. Only color, pose and
-// position change between them.
-const COIL_PATHS = [
-  "M 50 138 C 52 102, 84 74, 128 74 C 172 74, 204 102, 206 138 C 208 174, 174 206, 126 206 C 80 206, 48 174, 50 138",
-  "M 56 122 C 70 92, 106 70, 146 76 C 186 82, 210 110, 204 148 C 198 186, 160 210, 116 202 C 74 194, 44 156, 56 122",
-  "M 60 156 C 46 120, 74 84, 120 78 C 168 72, 202 98, 206 134 C 210 172, 182 202, 134 208 C 88 214, 72 190, 60 156",
-  "M 74 140 C 74 110, 98 90, 130 90 C 162 90, 184 112, 182 142 C 180 172, 154 192, 122 190 C 92 188, 74 168, 74 140",
-  "M 66 128 C 80 96, 118 80, 154 90 C 190 100, 206 128, 194 162 C 182 194, 142 210, 104 198 C 70 186, 54 158, 66 128",
-];
-
-const TAIL_PATHS = {
-  // Loose tail, trailing off toward no one.
-  grievance: "M 202 152 C 232 162, 258 150, 292 160",
-  // Tail reaches from the coil toward the figure's feet.
-  forgiveness: "M 196 186 C 218 206, 240 214, 254 214",
-  // The tail becomes a rope: from the raised hand, once around the coil, back.
-  productive:
-    "M 236 102 C 206 78, 150 60, 100 72 C 52 84, 34 128, 52 172 C 70 214, 140 226, 184 200 C 216 181, 234 140, 236 102",
-} as const;
-
-type LoopVariant = keyof typeof TAIL_PATHS;
-
-function LoopFigure({ pose }: { pose: "seated" | "standing" | "holding" }) {
-  const headR = 9;
-  const stroke = 6;
-
-  if (pose === "seated") {
-    // Inside the coil: hips on the baseline, knees drawn up toward the chest,
-    // back curved forward, head bowed down onto the knees, arms wrapped around the shins.
-    return (
-      <g
-        className="text-ink"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={stroke}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="128" cy="148" r={headR} fill="currentColor" stroke="none" />
-        <path d="M 128 214 C 128 190, 124 172, 128 162" />
-        <path d="M 128 214 L 122 154" />
-        <path d="M 128 214 L 134 154" />
-        <path d="M 122 154 L 124 214" />
-        <path d="M 134 154 L 132 214" />
-        <path d="M 128 162 L 120 154" />
-        <path d="M 128 162 L 138 154" />
-      </g>
-    );
-  }
-
-
-  // Outside the coil: upright on the same baseline, feet planted together, no stride.
-  return (
-    <g
-      className="text-ink"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={stroke}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="264" cy="122" r={headR} fill="currentColor" stroke="none" />
-      <path d="M 264 131 L 264 170" />
-      <path d="M 264 170 L 260 214" />
-      <path d="M 264 170 L 268 214" />
-      {pose === "holding" ? (
-        <>
-          <path d="M 264 142 L 236 102" />
-          <path d="M 264 142 L 272 168" />
-        </>
-      ) : (
-        <>
-          <path d="M 264 142 L 256 168" />
-          <path d="M 264 142 L 272 168" />
-        </>
-      )}
-    </g>
-  );
-}
-
-
-
-function LoopSvg({
-  variant,
-  colorClass,
-  label,
-}: {
-  variant: LoopVariant;
-  colorClass: string;
-  label: string;
-}) {
-  const id = useId();
-  const titleId = `${id}-title`;
-  const descId = `${id}-desc`;
-
-  const desc =
-    variant === "grievance"
-      ? "A person sits inside the scribbled coil with knees drawn up and head bowed, the loop closed around them."
-      : variant === "forgiveness"
-      ? "A person stands upright outside the empty coil, squared toward it and looking at it, with clear space between them."
-      : "A person stands upright outside the empty coil with one arm raised, holding a rope that wraps once around the coil and returns to their hand.";
-
+function SvgA() {
   return (
     <svg
-      viewBox="0 0 340 260"
-      className={`h-auto w-full ${colorClass}`}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.75"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      viewBox="0 0 420 300"
+      xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-labelledby={`${titleId} ${descId}`}
+      className="h-auto w-full"
     >
-      <title id={titleId}>{label}</title>
-      <desc id={descId}>{desc}</desc>
-      {COIL_PATHS.map((d) => (
-        <path key={d} d={d} />
-      ))}
-      <path d={TAIL_PATHS[variant]} />
-      <LoopFigure
-        pose={variant === "grievance" ? "seated" : variant === "forgiveness" ? "standing" : "holding"}
-      />
+      <title>Grievance loop</title>
+      <desc>A person sits hunched inside a tightly coiled loop that runs on around them.</desc>
+      <g fill="none" stroke="#b4451f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M 172.0 145.0 Q 173.7 148.8 173.5 150.9 Q 173.3 152.9 172.1 154.8 Q 170.9 156.7 169.0 158.3 Q 167.1 159.9 164.8 161.3 Q 162.5 162.7 159.8 163.8 Q 157.1 164.9 154.0 165.4 Q 150.9 165.9 147.7 165.8 Q 144.5 165.6 141.4 165.0 Q 138.4 164.3 135.3 163.4 Q 132.3 162.5 129.1 161.4 Q 126.0 160.2 122.9 158.5 Q 119.9 156.9 117.6 154.6 Q 115.3 152.2 114.1 149.4 Q 112.8 146.7 112.6 143.7 Q 112.4 140.7 113.0 137.6 Q 113.6 134.6 115.1 131.6 Q 116.6 128.6 119.2 126.0 Q 121.8 123.3 125.4 121.3 Q 129.0 119.4 133.2 118.1 Q 137.4 116.9 141.8 116.2 Q 146.2 115.4 150.8 115.0 Q 155.4 114.6 160.3 114.8 Q 165.1 114.9 170.0 115.9 Q 174.9 116.9 179.3 118.9 Q 183.7 120.8 187.4 123.6 Q 191.2 126.3 194.2 129.6 Q 197.2 132.9 199.3 136.6 Q 201.4 140.4 202.2 144.6 Q 202.9 148.7 201.9 152.9 Q 200.9 157.0 198.3 160.8 Q 195.8 164.6 192.2 167.9 Q 188.6 171.3 184.3 174.2 Q 180.1 177.1 175.1 179.5 Q 170.2 182.0 164.4 183.6 Q 158.7 185.3 152.4 185.9 Q 146.2 186.5 139.8 186.1 Q 133.4 185.7 127.1 184.4 Q 120.7 183.1 114.6 180.9 Q 108.5 178.6 103.1 175.4 Q 97.7 172.1 93.8 167.8 Q 89.8 163.6 87.7 158.6 Q 85.6 153.7 85.2 148.5 Q 84.7 143.3 85.6 138.2 Q 86.5 133.1 88.6 128.1 Q 90.8 123.1 94.4 118.4 Q 98.0 113.8 103.1 109.8 Q 108.3 105.9 114.5 102.9 Q 120.8 99.8 127.9 97.6 Q 134.9 95.4 142.6 94.1 Q 150.3 92.7 158.5 92.6 Q 166.7 92.4 174.8 93.8 Q 182.9 95.2 190.3 98.2 Q 197.6 101.2 203.8 105.4 Q 209.9 109.7 214.7 114.8 Q 219.5 119.8 222.8 125.5 Q 226.2 131.2 227.8 137.3 Q 229.4 143.5 228.9 149.8 Q 228.4 156.1 225.8 162.1 Q 223.3 168.2 219.2 173.8 Q 215.1 179.5 209.7 184.6 Q 204.3 189.8 197.4 194.3 Q 190.5 198.8 182.2 202.0 Q 173.8 205.3 164.4 206.9 Q 155.0 208.4 145.3 208.3 Q 135.6 208.2 126.1 206.5 Q 116.5 204.8 107.6 201.8 Q 98.6 198.7 90.8 194.3 Q 82.9 189.8 76.8 184.1 Q 70.7 178.3 66.6 171.7 Q 62.6 165.0 60.6 157.9 Q 58.5 150.8 58.2 143.5 Q 57.8 136.2 59.3 128.8 Q 60.8 121.4 64.6 114.3 Q 68.4 107.2 74.5 100.8 Q 80.7 94.4 88.9 89.3 Q 97.2 84.1 106.8 80.4 Q 116.5 76.6 127.2 74.3 Q 137.9 72.0 149.2 71.4 Q 160.5 70.9 171.7 72.4 Q 182.9 73.9 193.2 77.4 Q 203.5 80.9 212.5 85.9 Q 221.5 91.0 229.0 97.2 Q 236.5 103.3 242.5 110.4 T 248.4 117.6" />
+        <path d="M 248.4 117.6 C 304.4 147.6 250 244 306 248" />
+      </g>
+      <g fill="none" stroke="#f6f2ea" strokeWidth="13" strokeLinecap="round" strokeLinejoin="round">
+        <g transform="translate(174,204)">
+          <circle cx="-8.1" cy="-79.7" r="16.2" />
+          <path d="M 5.4 -70.2 L 12.2 -63.5" />
+          <path d="M 12.2 -63.5 C 17.6 -45.9 16.2 -24.3 8.1 -4.1" />
+          <path d="M 8.1 -4.1 L -17.6 -4.1" />
+          <path d="M -14.9 -6.8 C -27.0 -24.3 -35.1 -40.5 -37.8 -54.0" />
+          <path d="M -37.8 -54.0 C -35.1 -35.1 -33.8 -17.6 -33.8 -4.1" />
+          <path d="M -33.8 -4.1 L -54.0 -2.7" />
+          <path d="M 10.8 -60.8 C 0.0 -44.6 -18.9 -39.2 -35.1 -44.6" />
+        </g>
+      </g>
+      <g fill="none" stroke="#1f1c19" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+        <g transform="translate(174,204)">
+          <circle cx="-8.1" cy="-79.7" r="16.2" />
+          <path d="M 5.4 -70.2 L 12.2 -63.5" />
+          <path d="M 12.2 -63.5 C 17.6 -45.9 16.2 -24.3 8.1 -4.1" />
+          <path d="M 8.1 -4.1 L -17.6 -4.1" />
+          <path d="M -14.9 -6.8 C -27.0 -24.3 -35.1 -40.5 -37.8 -54.0" />
+          <path d="M -37.8 -54.0 C -35.1 -35.1 -33.8 -17.6 -33.8 -4.1" />
+          <path d="M -33.8 -4.1 L -54.0 -2.7" />
+          <path d="M 10.8 -60.8 C 0.0 -44.6 -18.9 -39.2 -35.1 -44.6" />
+        </g>
+      </g>
     </svg>
   );
 }
+
+function SvgB() {
+  return (
+    <svg
+      viewBox="0 0 420 300"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      className="h-auto w-full"
+    >
+      <title>Forgiveness loop</title>
+      <desc>A person stands outside the same coiled loop, on the ground, facing it.</desc>
+      <g fill="none" stroke="#d98324" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M 172.0 145.0 Q 173.7 148.8 173.5 150.9 Q 173.3 152.9 172.1 154.8 Q 170.9 156.7 169.0 158.3 Q 167.1 159.9 164.8 161.3 Q 162.5 162.7 159.8 163.8 Q 157.1 164.9 154.0 165.4 Q 150.9 165.9 147.7 165.8 Q 144.5 165.6 141.4 165.0 Q 138.4 164.3 135.3 163.4 Q 132.3 162.5 129.1 161.4 Q 126.0 160.2 122.9 158.5 Q 119.9 156.9 117.6 154.6 Q 115.3 152.2 114.1 149.4 Q 112.8 146.7 112.6 143.7 Q 112.4 140.7 113.0 137.6 Q 113.6 134.6 115.1 131.6 Q 116.6 128.6 119.2 126.0 Q 121.8 123.3 125.4 121.3 Q 129.0 119.4 133.2 118.1 Q 137.4 116.9 141.8 116.2 Q 146.2 115.4 150.8 115.0 Q 155.4 114.6 160.3 114.8 Q 165.1 114.9 170.0 115.9 Q 174.9 116.9 179.3 118.9 Q 183.7 120.8 187.4 123.6 Q 191.2 126.3 194.2 129.6 Q 197.2 132.9 199.3 136.6 Q 201.4 140.4 202.2 144.6 Q 202.9 148.7 201.9 152.9 Q 200.9 157.0 198.3 160.8 Q 195.8 164.6 192.2 167.9 Q 188.6 171.3 184.3 174.2 Q 180.1 177.1 175.1 179.5 Q 170.2 182.0 164.4 183.6 Q 158.7 185.3 152.4 185.9 Q 146.2 186.5 139.8 186.1 Q 133.4 185.7 127.1 184.4 Q 120.7 183.1 114.6 180.9 Q 108.5 178.6 103.1 175.4 Q 97.7 172.1 93.8 167.8 Q 89.8 163.6 87.7 158.6 Q 85.6 153.7 85.2 148.5 Q 84.7 143.3 85.6 138.2 Q 86.5 133.1 88.6 128.1 Q 90.8 123.1 94.4 118.4 Q 98.0 113.8 103.1 109.8 Q 108.3 105.9 114.5 102.9 Q 120.8 99.8 127.9 97.6 Q 134.9 95.4 142.6 94.1 Q 150.3 92.7 158.5 92.6 Q 166.7 92.4 174.8 93.8 Q 182.9 95.2 190.3 98.2 Q 197.6 101.2 203.8 105.4 Q 209.9 109.7 214.7 114.8 Q 219.5 119.8 222.8 125.5 Q 226.2 131.2 227.8 137.3 Q 229.4 143.5 228.9 149.8 Q 228.4 156.1 225.8 162.1 Q 223.3 168.2 219.2 173.8 Q 215.1 179.5 209.7 184.6 Q 204.3 189.8 197.4 194.3 Q 190.5 198.8 182.2 202.0 Q 173.8 205.3 164.4 206.9 Q 155.0 208.4 145.3 208.3 Q 135.6 208.2 126.1 206.5 Q 116.5 204.8 107.6 201.8 Q 98.6 198.7 90.8 194.3 Q 82.9 189.8 76.8 184.1 Q 70.7 178.3 66.6 171.7 Q 62.6 165.0 60.6 157.9 Q 58.5 150.8 58.2 143.5 Q 57.8 136.2 59.3 128.8 Q 60.8 121.4 64.6 114.3 Q 68.4 107.2 74.5 100.8 Q 80.7 94.4 88.9 89.3 Q 97.2 84.1 106.8 80.4 Q 116.5 76.6 127.2 74.3 Q 137.9 72.0 149.2 71.4 Q 160.5 70.9 171.7 72.4 Q 182.9 73.9 193.2 77.4 Q 203.5 80.9 212.5 85.9 Q 221.5 91.0 229.0 97.2 Q 236.5 103.3 242.5 110.4 T 248.4 117.6" />
+        <path d="M 248.4 117.6 C 304.4 147.6 250 244 306 248" />
+      </g>
+      <g fill="none" stroke="#f6f2ea" strokeWidth="13" strokeLinecap="round" strokeLinejoin="round">
+        <g transform="translate(352,250)">
+          <circle cx="0" cy="-92" r="12" />
+          <path d="M 0 -80 L 0 -42" />
+          <path d="M -1 -74 C -9 -64 -13 -55 -14 -45" />
+          <path d="M 1 -74 C 9 -64 13 -55 14 -45" />
+          <path d="M 0 -42 C -4 -28 -8 -13 -10 0" />
+          <path d="M 0 -42 C 4 -28 8 -13 10 0" />
+          <path d="M -17 0 L -6 0" />
+          <path d="M 6 0 L 17 0" />
+        </g>
+      </g>
+      <g fill="none" stroke="#1f1c19" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+        <g transform="translate(352,250)">
+          <circle cx="0" cy="-92" r="12" />
+          <path d="M 0 -80 L 0 -42" />
+          <path d="M -1 -74 C -9 -64 -13 -55 -14 -45" />
+          <path d="M 1 -74 C 9 -64 13 -55 14 -45" />
+          <path d="M 0 -42 C -4 -28 -8 -13 -10 0" />
+          <path d="M 0 -42 C 4 -28 8 -13 10 0" />
+          <path d="M -17 0 L -6 0" />
+          <path d="M 6 0 L 17 0" />
+        </g>
+      </g>
+    </svg>
+  );
+}
+
+function SvgC() {
+  return (
+    <svg
+      viewBox="0 0 420 300"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      className="h-auto w-full"
+    >
+      <title>The third loop</title>
+      <desc>A person stands outside the loop and holds its line in a raised hand.</desc>
+      <g fill="none" stroke="#2f7d43" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M 172.0 145.0 Q 173.7 148.8 173.5 150.9 Q 173.3 152.9 172.1 154.8 Q 170.9 156.7 169.0 158.3 Q 167.1 159.9 164.8 161.3 Q 162.5 162.7 159.8 163.8 Q 157.1 164.9 154.0 165.4 Q 150.9 165.9 147.7 165.8 Q 144.5 165.6 141.4 165.0 Q 138.4 164.3 135.3 163.4 Q 132.3 162.5 129.1 161.4 Q 126.0 160.2 122.9 158.5 Q 119.9 156.9 117.6 154.6 Q 115.3 152.2 114.1 149.4 Q 112.8 146.7 112.6 143.7 Q 112.4 140.7 113.0 137.6 Q 113.6 134.6 115.1 131.6 Q 116.6 128.6 119.2 126.0 Q 121.8 123.3 125.4 121.3 Q 129.0 119.4 133.2 118.1 Q 137.4 116.9 141.8 116.2 Q 146.2 115.4 150.8 115.0 Q 155.4 114.6 160.3 114.8 Q 165.1 114.9 170.0 115.9 Q 174.9 116.9 179.3 118.9 Q 183.7 120.8 187.4 123.6 Q 191.2 126.3 194.2 129.6 Q 197.2 132.9 199.3 136.6 Q 201.4 140.4 202.2 144.6 Q 202.9 148.7 201.9 152.9 Q 200.9 157.0 198.3 160.8 Q 195.8 164.6 192.2 167.9 Q 188.6 171.3 184.3 174.2 Q 180.1 177.1 175.1 179.5 Q 170.2 182.0 164.4 183.6 Q 158.7 185.3 152.4 185.9 Q 146.2 186.5 139.8 186.1 Q 133.4 185.7 127.1 184.4 Q 120.7 183.1 114.6 180.9 Q 108.5 178.6 103.1 175.4 Q 97.7 172.1 93.8 167.8 Q 89.8 163.6 87.7 158.6 Q 85.6 153.7 85.2 148.5 Q 84.7 143.3 85.6 138.2 Q 86.5 133.1 88.6 128.1 Q 90.8 123.1 94.4 118.4 Q 98.0 113.8 103.1 109.8 Q 108.3 105.9 114.5 102.9 Q 120.8 99.8 127.9 97.6 Q 134.9 95.4 142.6 94.1 Q 150.3 92.7 158.5 92.6 Q 166.7 92.4 174.8 93.8 Q 182.9 95.2 190.3 98.2 Q 197.6 101.2 203.8 105.4 Q 209.9 109.7 214.7 114.8 Q 219.5 119.8 222.8 125.5 Q 226.2 131.2 227.8 137.3 Q 229.4 143.5 228.9 149.8 Q 228.4 156.1 225.8 162.1 Q 223.3 168.2 219.2 173.8 Q 215.1 179.5 209.7 184.6 Q 204.3 189.8 197.4 194.3 Q 190.5 198.8 182.2 202.0 Q 173.8 205.3 164.4 206.9 Q 155.0 208.4 145.3 208.3 Q 135.6 208.2 126.1 206.5 Q 116.5 204.8 107.6 201.8 Q 98.6 198.7 90.8 194.3 Q 82.9 189.8 76.8 184.1 Q 70.7 178.3 66.6 171.7 Q 62.6 165.0 60.6 157.9 Q 58.5 150.8 58.2 143.5 Q 57.8 136.2 59.3 128.8 Q 60.8 121.4 64.6 114.3 Q 68.4 107.2 74.5 100.8 Q 80.7 94.4 88.9 89.3 Q 97.2 84.1 106.8 80.4 Q 116.5 76.6 127.2 74.3 Q 137.9 72.0 149.2 71.4 Q 160.5 70.9 171.7 72.4 Q 182.9 73.9 193.2 77.4 Q 203.5 80.9 212.5 85.9 Q 221.5 91.0 229.0 97.2 Q 236.5 103.3 242.5 110.4 T 248.4 117.6" />
+        <path d="M 248.4 117.6 C 294.4 91.6 318 106 380 140" />
+      </g>
+      <g fill="none" stroke="#f6f2ea" strokeWidth="13" strokeLinecap="round" strokeLinejoin="round">
+        <g transform="translate(352,250)">
+          <circle cx="0" cy="-92" r="12" />
+          <path d="M 0 -80 L 0 -42" />
+          <path d="M -1 -74 C -9 -64 -13 -55 -14 -45" />
+          <path d="M 3 -74 C 16 -84 24 -96 28 -110" />
+          <path d="M 0 -42 C -4 -28 -8 -13 -10 0" />
+          <path d="M 0 -42 C 4 -28 8 -13 10 0" />
+          <path d="M -17 0 L -6 0" />
+          <path d="M 6 0 L 17 0" />
+        </g>
+      </g>
+      <g fill="none" stroke="#1f1c19" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+        <g transform="translate(352,250)">
+          <circle cx="0" cy="-92" r="12" />
+          <path d="M 0 -80 L 0 -42" />
+          <path d="M -1 -74 C -9 -64 -13 -55 -14 -45" />
+          <path d="M 3 -74 C 16 -84 24 -96 28 -110" />
+          <path d="M 0 -42 C -4 -28 -8 -13 -10 0" />
+          <path d="M 0 -42 C 4 -28 8 -13 10 0" />
+          <path d="M -17 0 L -6 0" />
+          <path d="M 6 0 L 17 0" />
+        </g>
+      </g>
+    </svg>
+  );
+}
+
 
 function Index() {
   return (
