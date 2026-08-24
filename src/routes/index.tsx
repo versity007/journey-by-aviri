@@ -85,28 +85,25 @@ const stats = [
 
 const threeLoops = [
   {
-    variant: "grievance" as const,
+    Svg: SvgA,
     colorClass: "text-loop-red",
     n: "01",
     kicker: "The case",
     label: "Grievance Loop",
-    caption: "Inside it, rehearsing.",
   },
   {
-    variant: "forgiveness" as const,
+    Svg: SvgB,
     colorClass: "text-loop-amber",
     n: "02",
     kicker: "The interview",
     label: "Forgiveness Loop",
-    caption: "Outside it, seeing it run.",
   },
   {
-    variant: "productive" as const,
+    Svg: SvgC,
     colorClass: "text-loop-green",
     n: "03",
     kicker: "The new loop",
     label: "Productive Loop",
-    caption: "Holding it, pointed at something useful.",
   },
 ];
 
