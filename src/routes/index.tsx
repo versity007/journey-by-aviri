@@ -425,12 +425,11 @@ function Index() {
                   </div>
                   <div className="label-caps mb-10 text-subtle">{l.kicker}</div>
                   <div className="mb-10 min-h-[260px]">
-                    <LoopSvg variant={l.variant} colorClass={l.colorClass} label={l.label} />
+                    <l.Svg />
                   </div>
                   <h3 className={`mb-3 font-serif text-3xl font-normal leading-[1.14] ${l.colorClass}`}>
                     {l.label}
                   </h3>
-                  <p className="text-[17px] leading-[1.65] text-body">{l.caption}</p>
                 </div>
                 {i < threeLoops.length - 1 && (
                   <span aria-hidden="true" className="mx-auto block h-14 w-px bg-border lg:hidden" />
