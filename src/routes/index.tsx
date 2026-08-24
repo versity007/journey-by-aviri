@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Fragment, useId } from "react";
+import { Fragment } from "react";
 import heroLoop from "@/assets/hero-loop.jpg";
 
 export const Route = createFileRoute("/")({
