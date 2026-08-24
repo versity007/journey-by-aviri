@@ -149,17 +149,18 @@ function LoopFigure({ pose }: { pose: "seated" | "standing" | "holding" }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="128" cy="142" r={headR} fill="currentColor" stroke="none" />
-        <path d="M 128 214 C 128 190, 132 174, 128 158" />
-        <path d="M 128 214 L 116 152" />
-        <path d="M 128 214 L 140 152" />
-        <path d="M 116 152 L 112 198" />
-        <path d="M 140 152 L 144 198" />
-        <path d="M 128 158 L 114 152" />
-        <path d="M 128 158 L 142 152" />
+        <circle cx="128" cy="148" r={headR} fill="currentColor" stroke="none" />
+        <path d="M 128 214 C 128 190, 124 172, 128 162" />
+        <path d="M 128 214 L 122 154" />
+        <path d="M 128 214 L 134 154" />
+        <path d="M 122 154 L 124 214" />
+        <path d="M 134 154 L 132 214" />
+        <path d="M 128 162 L 120 154" />
+        <path d="M 128 162 L 138 154" />
       </g>
     );
   }
+
 
   // Outside the coil: upright on the same baseline, feet planted together, no stride.
   return (
