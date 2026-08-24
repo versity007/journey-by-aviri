@@ -571,13 +571,25 @@ function Index() {
           </div>
           <div className="bg-dark px-8 py-12 md:px-12">
             <div className="eyebrow mb-10 text-dark-foreground/40">The manager</div>
-            <div className="flex min-h-[180px] items-center border border-dashed border-rule-invert px-6 py-10">
-              <p className="font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] text-dark-foreground/45">
-                Golab quote pending — his read on what changed for the team.
+            <blockquote className="mb-8 font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] tracking-[-0.01em]">
+              <p className="mb-6 text-dark-foreground/90">
+                “One of our top leaders had been in a foul mood for months. I spent a lot of time sitting
+                with him and listening as he developed a growing list of grievances both at home and at
+                work. I wanted to help, but ultimately, the best I could do was be a sounding board.
               </p>
-            </div>
-            <div className="mt-8 text-sm font-medium uppercase tracking-[0.14em] text-dark-foreground/40">
-              — Golab
+              <p className="mb-6 text-dark-foreground/90">
+                When I learned about Aviri’s JOurneY of Grievance Experience, I thought it might be worth
+                a try. My colleague agreed to enroll in the coursework and before long, I began noticing a
+                positive shift in his mood, his approach to life, and, perhaps most importantly, his sense
+                of accountability.
+              </p>
+              <p className="text-dark-foreground/90">
+                After he completed the coursework, we both saw enough value in the experience that we
+                decided to continue working with Bijoy together, this time as a team of three.”
+              </p>
+            </blockquote>
+            <div className="text-sm font-medium uppercase tracking-[0.14em] text-dark-foreground/40">
+              — Steve G.
             </div>
           </div>
         </div>
