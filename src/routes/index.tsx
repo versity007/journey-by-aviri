@@ -754,38 +754,15 @@ function Index() {
       </section>
 
       <section className="bg-dark px-6 py-20 text-dark-foreground md:px-12 lg:py-28">
-        <div className="mx-auto grid max-w-[1440px] gap-px border-y border-rule-invert bg-rule-invert lg:grid-cols-2">
+        <div className="mx-auto max-w-[1440px]">
           <div className="bg-dark px-8 py-12 md:px-12">
             <div className="eyebrow mb-10 text-ember">The participant</div>
-            <blockquote className="mb-8 font-serif text-[clamp(26px,2.9vw,44px)] leading-[1.14] tracking-[-0.01em]">
+            <blockquote className="mb-8 max-w-[28em] font-serif text-[clamp(26px,2.9vw,44px)] leading-[1.14] tracking-[-0.01em]">
               “The grievance cloud lifted. And I stopped forming new ones. I feel the change in very
               real terms.”
             </blockquote>
             <div className="text-sm font-medium uppercase tracking-[0.14em] text-dark-foreground/60">
               — Chad A.
-            </div>
-          </div>
-          <div className="bg-dark px-8 py-12 md:px-12">
-            <div className="eyebrow mb-10 text-dark-foreground/40">The manager</div>
-            <blockquote className="mb-8 font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] tracking-[-0.01em]">
-              <p className="mb-6 text-dark-foreground/90">
-                “One of our top leaders had been in a foul mood for months. I spent a lot of time sitting
-                with him and listening as he developed a growing list of grievances both at home and at
-                work. I wanted to help, but ultimately, the best I could do was be a sounding board.
-              </p>
-              <p className="mb-6 text-dark-foreground/90">
-                When I learned about Aviri’s JOurneY of Grievance Experience, I thought it might be worth
-                a try. My colleague agreed to enroll in the coursework and before long, I began noticing a
-                positive shift in his mood, his approach to life, and, perhaps most importantly, his sense
-                of accountability.
-              </p>
-              <p className="text-dark-foreground/90">
-                After he completed the coursework, we both saw enough value in the experience that we
-                decided to continue working with Bijoy together, this time as a team of three.”
-              </p>
-            </blockquote>
-            <div className="text-sm font-medium uppercase tracking-[0.14em] text-dark-foreground/40">
-              — Steve G.
             </div>
           </div>
         </div>
