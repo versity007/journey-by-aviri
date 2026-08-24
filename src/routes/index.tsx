@@ -83,6 +83,107 @@ const stats = [
   ["Module 0", "Grievance is the entry point"],
 ];
 
+const threeLoops = [
+  {
+    variant: "grievance" as const,
+    colorClass: "text-loop-red",
+    label: "Grievance Loop",
+    caption: "Inside it, rehearsing.",
+  },
+  {
+    variant: "forgiveness" as const,
+    colorClass: "text-loop-amber",
+    label: "Forgiveness Loop",
+    caption: "Outside it, seeing it run.",
+  },
+  {
+    variant: "productive" as const,
+    colorClass: "text-loop-green",
+    label: "Productive Loop",
+    caption: "Holding it, pointed at something useful.",
+  },
+];
+
+function LoopSvg({
+  variant,
+  colorClass,
+  label,
+}: {
+  variant: "grievance" | "forgiveness" | "productive";
+  colorClass: string;
+  label: string;
+}) {
+  const id = useId();
+  const titleId = `${id}-title`;
+  const descId = `${id}-desc`;
+
+  const grievance = (
+    <g>
+      <circle cx="175" cy="125" r="10" />
+      <path d="M 175 135 L 175 155" />
+      <path d="M 175 155 L 160 170" />
+      <path d="M 175 155 L 190 170" />
+      <path d="M 160 170 L 160 185" />
+      <path d="M 190 170 L 190 185" />
+      <path d="M 175 140 L 160 165" />
+      <path d="M 175 140 L 190 165" />
+    </g>
+  );
+
+  const forgiveness = (
+    <g>
+      <circle cx="250" cy="115" r="10" />
+      <path d="M 250 125 L 248 165" />
+      <path d="M 248 165 L 238 200" />
+      <path d="M 248 165 L 258 200" />
+      <path d="M 248 140 L 220 150" />
+    </g>
+  );
+
+  const productive = (
+    <g>
+      <circle cx="250" cy="115" r="10" />
+      <path d="M 250 125 L 250 165" />
+      <path d="M 250 165 L 240 200" />
+      <path d="M 250 165 L 260 200" />
+      <path d="M 250 135 L 290 150" />
+    </g>
+  );
+
+  const desc =
+    variant === "grievance"
+      ? "A simple line figure sits hunched with knees drawn up inside a scribbled coil."
+      : variant === "forgiveness"
+      ? "A simple line figure stands outside a scribbled coil, turned toward it and looking at it."
+      : "A simple line figure stands outside a scribbled coil, holding the loose tail and lassoing it.";
+
+  return (
+    <svg
+      viewBox="0 0 320 240"
+      className={`h-auto w-full ${colorClass}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role="img"
+      aria-labelledby={`${titleId} ${descId}`}
+    >
+      <title id={titleId}>{label}</title>
+      <desc id={descId}>{desc}</desc>
+      <g>
+        <path d="M 120 80 C 200 55, 265 100, 235 155 C 205 210, 105 195, 75 145 C 45 95, 85 70, 120 80" />
+        <path d="M 105 95 C 175 75, 235 115, 210 160 C 185 205, 95 190, 70 145 C 50 100, 80 85, 105 95" />
+        <path d="M 135 115 C 190 100, 220 130, 200 160 C 180 190, 120 185, 105 155 C 95 125, 115 110, 135 115" />
+        <path d="M 220 145 C 245 135, 270 155, 290 150" />
+      </g>
+      {variant === "grievance" && grievance}
+      {variant === "forgiveness" && forgiveness}
+      {variant === "productive" && productive}
+    </svg>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen">
