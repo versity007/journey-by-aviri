@@ -29,24 +29,24 @@ const outcomes = [
   {
     n: "01",
     title: "A different loop in place of the old one",
-    body: "The grievance loop gets replaced with a productive one: gratitude instead of grinding, problem-solving instead of prosecuting. Same energy, redirected.",
+    body: "Grinding becomes problem-solving; prosecuting becomes understanding. Same energy, redirected.",
   },
   {
     n: "02",
     title: "A short list of what actually needs work",
-    body: "Grievances are precise. Each one points at something specific that is broken or unspoken — in how they communicate, what they expect, where they think the line is. They leave knowing which three or four things those are.",
+    body: "Grievances are precise. Each one points at something specific that is broken or unspoken. They leave knowing which three or four things those are.",
   },
   {
     n: "03",
     title: "The ability to defuse it in other people",
-    body: "Once someone can see the loop running, they can see it running in colleagues, clients, and direct reports — and stop feeding it. This is the part that changes a team, not just a person.",
+    body: "Once someone can see the loop running, they can see it in colleagues, clients, and direct reports — and stop feeding it. This is the part that changes a team, not just a person.",
   },
 ];
 
 const notThis = [
   {
     label: "Not therapy",
-    body: "The work is structural, not excavational: find the mechanism, watch it run, change it. Anyone who needs clinical care should have it — this is a different instrument.",
+    body: "We’re not excavating childhood or sitting with feelings until they soften. The work is structural: find the mechanism, watch it run, change it. Anyone who needs clinical care should have it — this is a different instrument.",
   },
   {
     label: "Not coaching on retainer",
@@ -54,7 +54,7 @@ const notThis = [
   },
   {
     label: "Not performance management",
-    body: "Nothing from the sessions is reported back to you, and it shouldn’t be sold to the employee as a paper trail.",
+    body: "Nothing from the sessions is reported back to you. This isn’t a paper trail, and it shouldn’t be sold to the employee as one.",
   },
   {
     label: "Not a personality transplant",
@@ -73,9 +73,9 @@ const facts = [
 ];
 
 const stats = [
-  ["25 yrs", "Developing the underlying method"],
-  ["1-on-1", "Never a workshop or a cohort"],
-  ["Module 0", "Grievance is the entry point"],
+  ["25 yrs", "Developing and testing the underlying method"],
+  ["1-on-1", "Every session run by a trained guide, never a group"],
+  ["Module 0", "Grievance is the first door into a larger body of work"],
 ];
 
 function Index() {
@@ -104,10 +104,10 @@ function Index() {
           </div>
 
           <h1 className="display mb-6 max-w-[21em] text-[clamp(40px,4.8vw,78px)] leading-[0.99] tracking-[-0.015em]">
-            Maybe It’s Not an Attitude Problem.
+            The Cost Isn’t One Difficult Person. It’s Everyone Working Around Them.
           </h1>
           <p className="mb-8 font-serif text-[clamp(24px,2.3vw,34px)] italic leading-[1.15] text-primary">
-            It may be a grievance pattern. Seven weeks, one-on-one, to break the loop at its source.
+            Seven weeks, one-on-one, to remove the friction at its source.
           </p>
 
           <p className="mb-6 max-w-[33em] text-[19px] leading-relaxed text-body">
@@ -148,12 +148,6 @@ function Index() {
               className="inline-flex h-14 items-center rounded-sm bg-ink px-8 text-[15px] font-medium tracking-[0.02em] text-dark-foreground transition-colors hover:bg-primary"
             >
               Talk to Us About One Person
-            </a>
-            <a
-              href="#experience"
-              className="border-b border-border pb-1 text-[15px] font-medium text-ink transition-colors hover:border-primary hover:text-primary"
-            >
-              See how the seven weeks work
             </a>
           </div>
         </div>
@@ -289,23 +283,25 @@ function Index() {
           <div>
             <div className="eyebrow mb-6 text-primary">Where This Comes From</div>
             <h2 className="display mb-5 text-[clamp(32px,3.4vw,52px)] leading-[1.06]">
-              Twenty-Five Years of Method, Pointed at One Loop
+              Where This Comes From
             </h2>
             <span className="block h-px w-[52px] bg-primary" />
           </div>
           <div className="grid gap-7">
             <p className="text-[21px] leading-[1.6] text-ink">
-              JOurneY is the work of Bijoy Goswami and Aviri, built on a model-based method developed
-              over twenty-five years.
+              JOurneY is the work of Bijoy Goswami and Aviri, built over twenty-five years of a
+              single question: what model is this person actually running?
             </p>
             <p className="text-[19px] leading-[1.7] text-body">
-              Grievance is where we start because it’s where the cost shows up first. In the larger
-              body of work it’s Module 0 — an entry point, not the whole map. What sits behind it is a
-              way of seeing patterns that people can keep using long after these weeks end.
+              People don’t behave randomly. They run models — of how work should go, what respect
+              looks like, where the line is. Most were installed early and never examined. When a model
+              stops matching reality, it doesn’t announce itself; it shows up as friction.
             </p>
             <p className="text-[19px] leading-[1.7] text-body">
-              The method isn’t taught in a classroom sense. It’s run on the participant’s behalf by a
-              trained guide, so they get the result without having to first learn the instrument.
+              Grievance is where that becomes visible, which is why it’s the entry point. The method
+              behind the sessions is the same one Aviri has used with founders, teams, and communities
+              for twenty-five years. We run it on the participant’s behalf rather than teaching it —
+              they don’t need a framework, they need the loop to stop.
             </p>
 
             <div className="mt-3 grid gap-px border-y border-border bg-border sm:grid-cols-3">
@@ -335,6 +331,14 @@ function Index() {
               <h2 className="display mb-8 text-[clamp(30px,3.2vw,50px)] leading-[1.06]">
                 Six sessions across seven weeks. A follow-up three weeks later.
               </h2>
+              <p className="mb-8 text-[19px] leading-[1.7] text-body">
+                Seven weeks is a sprint, not a subscription: a prep week, six working sessions, and an
+                end you can point to. The first stretch is recognition — getting the loop out of their
+                head and onto the table where it can be looked at. The middle clears what has
+                accumulated. The last sessions build the replacement and rehearse it, so there’s
+                something to run when the next trigger arrives. Then they practice in the world for
+                three weeks, ten minutes of journaling a day, and we review how it’s holding.
+              </p>
               <div className="border-t border-border">
                 {facts.map(([k, v]) => (
                   <div
@@ -352,16 +356,17 @@ function Index() {
                 What it’s like for them
               </h3>
               <p className="text-[19px] leading-[1.7] text-body">
-                Nobody is asked to be more positive, more open, or ready to grow. We start with the
-                grievances exactly as they are, treated as legitimate, because they usually are.
+                Nobody arrives here in a good mood about it, and that’s planned for. We don’t ask
+                anyone to be more positive or ready to grow. We start with the grievances exactly as
+                they are, treated as legitimate, because they usually are.
               </p>
               <p className="text-[19px] leading-[1.7] text-body">
-                What changes is that they get to see the machinery from the outside. Most people
-                describe the weight coming off before they can describe why.
+                What changes is that they see the machinery from the outside for the first time.
+                Most people describe the weight coming off before they can describe what happened.
               </p>
               <p className="text-[19px] leading-[1.7] text-body">
-                Work grievances and personal ones both come up, because people don’t sort themselves
-                that neatly. It stays confidential either way.
+                Work and personal grievances both come along — these patterns rarely started at the
+                office — and it stays confidential either way.
               </p>
             </div>
           </div>
@@ -419,7 +424,7 @@ function Index() {
           </div>
 
           <p className="mt-9 max-w-[40em] text-[17px] leading-[1.65] text-body">
-            Full refund any time before Session 4, no conversation required.
+            Full refund any time before Session 4, no conversation required. By then either the recognition has landed or it hasn’t — and we’d rather you not pay for the second half of something that isn’t working.
           </p>
         </div>
       </section>
@@ -492,4 +497,3 @@ function Index() {
     </div>
   );
 }
-
