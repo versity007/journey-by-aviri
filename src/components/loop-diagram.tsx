@@ -115,9 +115,6 @@ function GrievanceFigure() {
       {/* arms to head */}
       <path d="M156,140 C150,145 148,150 152,116" />
       <path d="M164,140 C170,145 172,150 168,116" />
-      {/* hands */}
-      <circle cx="152" cy="116" r="2.4" fill={INK} stroke="none" />
-      <circle cx="168" cy="116" r="2.4" fill={INK} stroke="none" />
     </g>
   );
 }
