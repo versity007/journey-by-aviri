@@ -1,18 +1,22 @@
+import panel1 from "@/assets/panel1-grievance.png";
+import panel2 from "@/assets/panel2-release.png";
+import panel3 from "@/assets/panel3-productive.png";
+
 const PANELS = [
   {
-    src: "/__l5e/assets-v1/9e7bb188-72a2-4615-8d23-d4c6ef997941/panel1-grievance.png",
+    src: panel1,
     width: 1122,
     height: 515,
     alt: "Painting of a person curled up inside a fiery red circular loop - the Grievance loop",
   },
   {
-    src: "/__l5e/assets-v1/08d494cc-efcc-49bd-b76c-abd022c10e27/panel2-release.png",
+    src: panel2,
     width: 1122,
     height: 460,
     alt: "Painting of a person standing outside an orange circular loop, looking at it - Release",
   },
   {
-    src: "/__l5e/assets-v1/f653e1a6-7092-4476-87d4-329c6bfa44ff/panel3-productive.png",
+    src: panel3,
     width: 1052,
     height: 1495,
     alt: "Painting of two figures lassoing a glowing green circular loop - the Productive loop",
