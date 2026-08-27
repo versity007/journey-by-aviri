@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroLoop from "@/assets/hero-loop.jpg";
+import { LoopDiagram } from "@/components/loop-diagram";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,12 +24,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const loopSteps = [
-  { n: "01", text: "Something lands wrong." },
-  { n: "02", text: "A story forms around it." },
-  { n: "03", text: "The story gets rehearsed." },
-  { n: "04", text: "Rehearsal makes it feel like fact." },
-];
 
 const outcomes = [
   {
@@ -221,16 +216,7 @@ function Index() {
             most of the time, it runs unattended — and once it’s running, it keeps running.
           </p>
 
-          <div className="grid gap-px border-y border-rule-invert bg-rule-invert sm:grid-cols-2 xl:grid-cols-4">
-            {loopSteps.map((s) => (
-              <div key={s.n} className="bg-dark px-7 pt-9 pb-11">
-                <div className="mb-7 text-[11px] font-semibold tracking-[0.2em] text-ember">
-                  {s.n}
-                </div>
-                <p className="font-serif text-[27px] leading-[1.22]">{s.text}</p>
-              </div>
-            ))}
-          </div>
+          <LoopDiagram />
 
           <div className="flex items-center gap-4 pt-6">
             <span className="text-xs font-medium uppercase tracking-[0.18em] text-dark-foreground/50">
@@ -331,6 +317,11 @@ function Index() {
                 </div>
               ))}
             </div>
+            <p className="mt-8 text-base italic text-body">
+              Further reading on the grievance pattern:{" "}
+              <span className="not-italic text-ink">“Steve Jobs in Exile”</span> and{" "}
+              <span className="not-italic text-ink">“Dopamine Nation.”</span>
+            </p>
           </div>
         </div>
       </section>
@@ -445,14 +436,22 @@ function Index() {
             </div>
           </div>
           <div className="bg-dark px-8 py-12 md:px-12">
-            <div className="eyebrow mb-10 text-dark-foreground/40">The manager</div>
+            <div className="eyebrow mb-10 text-dark-foreground/40">The person who sent him</div>
             <div className="flex min-h-[180px] items-center border border-dashed border-rule-invert px-6 py-10">
               <p className="font-serif text-[clamp(20px,1.9vw,26px)] leading-[1.3] text-dark-foreground/45">
-                Golab quote pending — his read on what changed for the team.
+                “One of our top leaders had been in a foul mood for months. I spent a lot of time sitting
+                with him and listening as he developed a growing list of grievances both at home and at
+                work. I wanted to help, but ultimately, the best I could do was be a sounding board. When I
+                learned about Aviri's JOurneY of Grievance Experience, I thought it might be worth a try.
+                My colleague agreed to enroll in the coursework and before long, I began noticing a
+                positive shift in his mood, his approach to life, and, perhaps most importantly, his sense
+                of accountability. After he completed the coursework, we both saw enough value in the
+                experience that we decided to continue working with Bijoy together, this time as a team of
+                three.”
               </p>
             </div>
             <div className="mt-8 text-sm font-medium uppercase tracking-[0.14em] text-dark-foreground/40">
-              — Golab
+              — Steve G.
             </div>
           </div>
         </div>
