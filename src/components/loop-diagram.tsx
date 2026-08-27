@@ -160,20 +160,20 @@ function GratitudeFigure() {
       fill="none"
     >
       {/* lasso rope around the loop */}
-      <path d="M130,90 C165,35 245,55 255,125 C265,195 190,230 130,185 C105,165 110,115 130,90" />
+      <path d="M95,80 C140,20 260,40 270,130 C280,220 190,250 120,220 C70,200 75,120 95,80" />
       {/* head */}
-      <circle cx="85" cy="110" r="12" />
+      <circle cx="45" cy="110" r="12" />
       {/* neck */}
-      <path d="M85,122 L85,130" />
+      <path d="M45,122 L45,130" />
       {/* body */}
-      <path d="M85,130 L85,190" />
+      <path d="M45,130 L45,190" />
       {/* legs */}
-      <path d="M85,190 L65,245" />
-      <path d="M85,190 L105,245" />
+      <path d="M45,190 L25,245" />
+      <path d="M45,190 L65,245" />
       {/* left arm at side */}
-      <path d="M80,145 L75,180" />
+      <path d="M40,145 L35,180" />
       {/* right arm throwing */}
-      <path d="M90,145 L110,110 L130,90" />
+      <path d="M50,145 L75,100 L95,80" />
     </g>
   );
 }
