@@ -26,11 +26,11 @@ export function LoopDiagram() {
           src={p.src}
           alt={p.alt}
           width={1122}
-          height={453}
+          height={467}
           loading="lazy"
           decoding="async"
           className="h-auto w-full rounded-[10px] object-cover"
-          style={{ aspectRatio: "1122 / 453" }}
+          style={{ aspectRatio: "1122 / 467" }}
         />
       ))}
     </div>
