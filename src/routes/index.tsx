@@ -216,16 +216,7 @@ function Index() {
             most of the time, it runs unattended — and once it’s running, it keeps running.
           </p>
 
-          <div className="grid gap-px border-y border-rule-invert bg-rule-invert sm:grid-cols-2 xl:grid-cols-4">
-            {loopSteps.map((s) => (
-              <div key={s.n} className="bg-dark px-7 pt-9 pb-11">
-                <div className="mb-7 text-[11px] font-semibold tracking-[0.2em] text-ember">
-                  {s.n}
-                </div>
-                <p className="font-serif text-[27px] leading-[1.22]">{s.text}</p>
-              </div>
-            ))}
-          </div>
+          <LoopDiagram />
 
           <div className="flex items-center gap-4 pt-6">
             <span className="text-xs font-medium uppercase tracking-[0.18em] text-dark-foreground/50">
