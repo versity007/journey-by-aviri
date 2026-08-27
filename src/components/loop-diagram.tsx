@@ -1,18 +1,18 @@
-import panel1 from "@/assets/panel1-grievance.png";
-import panel2 from "@/assets/panel2-release.png";
+import panel1 from "@/assets/1-panel1-grievance-portrait.png";
+import panel2 from "@/assets/2-panel2-release-portrait.png";
 import panel3 from "@/assets/5-panel3-loop.png";
 
 const PANELS = [
   {
     src: panel1,
-    width: 1122,
-    height: 515,
+    width: 987,
+    height: 1402,
     alt: "Painting of a person curled up inside a fiery red circular loop - the Grievance loop",
   },
   {
     src: panel2,
-    width: 1122,
-    height: 460,
+    width: 987,
+    height: 1402,
     alt: "Painting of a person standing outside an orange circular loop, looking at it - Release",
   },
   {
