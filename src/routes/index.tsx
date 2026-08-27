@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroLoop from "@/assets/hero-loop.jpg";
+import { LoopDiagram } from "@/components/loop-diagram";
 
 export const Route = createFileRoute("/")({
   head: () => ({
