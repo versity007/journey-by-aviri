@@ -5,33 +5,43 @@ import panel3 from "@/assets/panel3-productive.png.asset.json";
 const PANELS = [
   {
     src: panel1.url,
+    width: 1122,
+    height: 515,
     alt: "Painting of a person curled up inside a fiery red circular loop — the Grievance loop",
   },
   {
     src: panel2.url,
+    width: 1122,
+    height: 460,
     alt: "Painting of a person standing outside an orange circular loop, looking at it — Release",
   },
   {
     src: panel3.url,
-    alt: "Painting of a person lassoing a green circular loop — Productive",
+    width: 1052,
+    height: 1495,
+    alt: "Painting of two figures lassoing a glowing green circular loop — the Productive loop",
   },
 ];
 
 export function LoopDiagram() {
   return (
-    <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+    <div className="grid grid-cols-1 items-stretch gap-3 md:grid-cols-3">
       {PANELS.map((p) => (
-        <img
+        <div
           key={p.src}
-          src={p.src}
-          alt={p.alt}
-          width={1122}
-          height={467}
-          loading="lazy"
-          decoding="async"
-          className="h-auto w-full rounded-[10px] object-cover"
-          style={{ aspectRatio: "1122 / 467" }}
-        />
+          className="flex min-h-[220px] items-center justify-center overflow-hidden rounded-[10px] md:min-h-[320px]"
+          style={{ backgroundColor: "#2b0701" }}
+        >
+          <img
+            src={p.src}
+            alt={p.alt}
+            width={p.width}
+            height={p.height}
+            loading="lazy"
+            decoding="async"
+            className="h-full max-h-full w-full object-contain"
+          />
+        </div>
       ))}
     </div>
   );
