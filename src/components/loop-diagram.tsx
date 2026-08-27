@@ -37,7 +37,7 @@ export function LoopDiagram() {
             alt={p.alt}
             width={p.width}
             height={p.height}
-            loading="lazy"
+            loading="eager"
             decoding="async"
             className="h-full max-h-full w-full object-contain"
           />
