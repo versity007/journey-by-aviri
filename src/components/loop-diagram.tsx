@@ -132,20 +132,20 @@ function ReleaseFigure() {
       fill="none"
     >
       {/* head */}
-      <circle cx="235" cy="115" r="12" />
+      <circle cx="285" cy="115" r="12" />
       {/* gaze toward loop */}
-      <path d="M228,112 L195,120" strokeWidth="1.6" />
+      <path d="M278,112 L240,120" strokeWidth="1.6" />
       {/* neck */}
-      <path d="M235,127 L235,135" />
+      <path d="M285,127 L285,135" />
       {/* body */}
-      <path d="M235,135 L235,195" />
+      <path d="M285,135 L285,195" />
       {/* legs */}
-      <path d="M235,195 L215,245" />
-      <path d="M235,195 L255,245" />
+      <path d="M285,195 L265,245" />
+      <path d="M285,195 L305,245" />
       {/* arm pointing */}
-      <path d="M230,145 L190,155 L170,150" />
+      <path d="M280,145 L240,155 L220,150" />
       {/* arm at side */}
-      <path d="M240,145 L245,180" />
+      <path d="M290,145 L295,180" />
     </g>
   );
 }
