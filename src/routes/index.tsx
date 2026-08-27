@@ -317,6 +317,11 @@ function Index() {
                 </div>
               ))}
             </div>
+            <p className="mt-8 text-base italic text-body">
+              Further reading on the grievance pattern:{" "}
+              <span className="not-italic text-ink">“Steve Jobs in Exile”</span> and{" "}
+              <span className="not-italic text-ink">“Dopamine Nation.”</span>
+            </p>
           </div>
         </div>
       </section>
