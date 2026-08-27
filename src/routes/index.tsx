@@ -24,12 +24,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const loopSteps = [
-  { n: "01", text: "Something lands wrong." },
-  { n: "02", text: "A story forms around it." },
-  { n: "03", text: "The story gets rehearsed." },
-  { n: "04", text: "Rehearsal makes it feel like fact." },
-];
 
 const outcomes = [
   {
