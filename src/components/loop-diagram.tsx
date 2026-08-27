@@ -1,6 +1,6 @@
 import panel1 from "@/assets/panel1-grievance.png";
 import panel2 from "@/assets/panel2-release.png";
-import panel3 from "@/assets/panel3-productive.png";
+import panel3 from "@/assets/5-panel3-loop.png";
 
 const PANELS = [
   {
