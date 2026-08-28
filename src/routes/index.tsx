@@ -66,7 +66,7 @@ const facts = [
   ["Format", "Confidential 1-on-1"],
   ["Sessions", "7 × 1 hour, with a trained guide"],
   ["Before session one", "Prep week — reading and a first pass on paper"],
-  ["Weekly load", "~3 hrs a week, 21 hours total, call plus assignments"],
+  ["Weekly load", "~3 hrs a week, 21 hours total — weekly call plus assignments"],
   ["After", "Daily practice, then a review call at week 10"],
   ["Reported to you", "Nothing"],
   ["Investment", "Contact us to discuss"],
@@ -112,7 +112,7 @@ function Index() {
 
           <p className="mb-6 max-w-[33em] text-[19px] leading-relaxed text-body">
             JOurneY is a confidential program for a single employee — the talented one whose friction
-            has started shaping how everyone else behaves. They leave with a different response ready
+            is shaping how everyone else behaves. They leave with a different response ready
             for the next time something lands wrong, and the ability to spot the same pattern in the
             people around them.
           </p>
@@ -207,7 +207,7 @@ function Index() {
             Grievance Is Not a Character Flaw. It’s Standard Equipment Running Badly.
           </h2>
           <p className="mb-16 max-w-[38em] text-[19px] leading-relaxed text-dark-foreground/60">
-            Every human being is issued the same machinery for handling being wronged. In most people,
+            Everyone is born with the same machinery for handling being wronged. In most people,
             most of the time, it runs unattended — and once it’s running, it keeps running.
           </p>
 
@@ -281,7 +281,7 @@ function Index() {
       <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 lg:py-28">
         <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <div>
-            <div className="eyebrow mb-6 text-primary">Where This Comes From</div>
+            <div className="eyebrow mb-6 text-primary">Why Us</div>
             <h2 className="display mb-5 text-[clamp(32px,3.4vw,52px)] leading-[1.06]">
               Where This Comes From
             </h2>
@@ -332,7 +332,7 @@ function Index() {
                 Seven sessions across seven weeks. A follow-up three weeks later.
               </h2>
               <p className="mb-8 text-[19px] leading-[1.7] text-body">
-                Seven weeks is a sprint, not a subscription: a prep week, seven working sessions, and an
+                Seven weeks is a sprint, not a subscription: a little prep, seven weekly sessions, and an
                 end you can point to. The first stretch is recognition — getting the loop out of their
                 head and onto the table where it can be looked at. The middle clears what has
                 accumulated. The last sessions build the replacement and rehearse it, so there’s
@@ -424,7 +424,7 @@ function Index() {
           </div>
 
           <p className="mt-9 max-w-[40em] text-[17px] leading-[1.65] text-body">
-            Full refund any time before Session 4, no conversation required. By then either the recognition has landed or it hasn’t — and we’d rather you not pay for the second half of something that isn’t working.
+            Full refund any time before Session 4, no conversation required. By then either the recognition has landed or it hasn’t — and we’d rather you not pay for the rest of something that isn’t working.
           </p>
         </div>
       </section>
