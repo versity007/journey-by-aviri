@@ -1,6 +1,6 @@
-import grievanceImg from "@/assets/3-8-1-panel1-grievance-portrait.png";
-import releaseImg from "@/assets/4-8-2-panel2-release-portrait.png";
-import empoweredImg from "@/assets/5-8-3-panel3-empowered-portrait.png";
+import grievanceImg from "@/assets/6-9-1-panel1-grievance-portrait.png";
+import releaseImg from "@/assets/7-9-2-panel2-release-portrait.png";
+import empoweredImg from "@/assets/8-9-3-panel3-empowered-portrait.png";
 
 const PANELS = [
   {
