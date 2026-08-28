@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroLoop from "@/assets/hero-loop.jpg";
 import grievancePanel from "@/assets/6-9-1-panel1-grievance-portrait.png";
 import releasePanel from "@/assets/7-9-2-panel2-release-portrait.png";
-import empoweredPanel from "@/assets/1-10-3-panel3-empowered-portrait.png";
+import empoweredPanel from "@/assets/1-11-3-panel3-empowered-portrait.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
