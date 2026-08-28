@@ -19,7 +19,7 @@ const PANELS = [
     src: productiveImg,
     width: 987,
     height: 1402,
-    alt: "Painting of a person lassoing a glowing green circular loop - the Productive loop",
+    alt: "Painting of a person lassoing a glowing orange circular loop - the Productive loop",
   },
 ];
 
