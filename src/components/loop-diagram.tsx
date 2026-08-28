@@ -1,6 +1,6 @@
 import panel1 from "@/assets/1-panel1-grievance-portrait.png";
 import panel2 from "@/assets/2-panel2-release-portrait.png";
-import panel3 from "@/assets/5-panel3-loop.png";
+import panel3 from "@/assets/3-panel3-productive-portrait.png";
 
 const PANELS = [
   {
@@ -17,9 +17,9 @@ const PANELS = [
   },
   {
     src: panel3,
-    width: 1052,
-    height: 1495,
-    alt: "Painting of two figures lassoing a glowing green circular loop - the Productive loop",
+    width: 987,
+    height: 1402,
+    alt: "Painting of two figures wielding ropes around a glowing green circular loop - the Productive loop",
   },
 ];
 
