@@ -43,6 +43,24 @@ const outcomes = [
   },
 ];
 
+const journey = [
+  {
+    step: "Loop one — where it starts",
+    name: "The Grievance Loop",
+    body: "You’re locked inside it, and it’s running you: angry, righteous, certain, and quietly spreading the cost to your team. You don’t even realize it’s a loop.",
+  },
+  {
+    step: "Loop two — the neutralizing",
+    name: "The Release Loop",
+    body: "We accept the grievances exactly as they come, then show you the loop that’s been running you — and neutralize it. Release as in released: an unburdening.",
+  },
+  {
+    step: "Loop three — the harness",
+    name: "The Empowered Loop",
+    body: "The fire doesn’t get put out. It gets harnessed — the same power that was inside the grievance, now aimed at massive productivity.",
+  },
+];
+
 const notThis = [
   {
     label: "Not therapy",
@@ -208,18 +226,38 @@ function Index() {
           </h2>
           <p className="mb-16 max-w-[38em] text-[19px] leading-relaxed text-dark-foreground/60">
             Everyone comes with the same machinery for handling being wronged. In most of us it
-            runs unattended. Once it starts, it keeps running.
+            runs unattended. Once it starts, it keeps running. That machinery is the Grievance
+            Loop — the first of three loops this program moves you through.
           </p>
 
           <LoopDiagram />
 
           <div className="flex items-center gap-4 pt-6">
             <span className="text-xs font-medium uppercase tracking-[0.18em] text-dark-foreground/50">
-              and around it goes, mostly out of view
+              The Grievance Loop → The Release Loop → The Empowered Loop
             </span>
             <span className="h-px flex-1 bg-rule-invert" />
             <span className="text-xl text-ember">↻</span>
           </div>
+
+          <div className="mt-16 grid gap-px border-y border-rule-invert bg-rule-invert lg:grid-cols-3">
+            {journey.map((j) => (
+              <div key={j.name} className="bg-dark px-8 pt-10 pb-12">
+                <div className="mb-3 text-[11px] font-semibold tracking-[0.2em] text-ember">
+                  {j.step}
+                </div>
+                <h3 className="mb-4 font-serif text-2xl font-normal leading-[1.14]">{j.name}</h3>
+                <p className="text-[17px] leading-[1.65] text-dark-foreground/70">{j.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-10 max-w-[46em] text-[19px] leading-[1.65] text-dark-foreground/70">
+            The journey runs on two tracks at once: an inner one — your own progression from
+            grievance to release to self-empowerment — and an interpersonal one, where you learn to
+            neutralize the grievances others carry against you and turn those conversations
+            productive.
+          </p>
 
           <div className="mt-16 grid gap-10 lg:grid-cols-2 lg:gap-16">
             <p className="text-[19px] leading-[1.65] text-dark-foreground/70">
@@ -333,10 +371,11 @@ function Index() {
               </h2>
               <p className="mb-8 text-[19px] leading-[1.7] text-body">
                 Seven weeks is a sprint, not a subscription: a prep week, seven working sessions, and an
-                end you can point to. The first stretch is recognition — getting the loop out of their
-                head and onto the table where it can be looked at. The middle clears what has
-                accumulated. The last sessions build the replacement and rehearse it, so there’s
-                something to run when the next trigger arrives. Then they practice in the world for
+                end you can point to. The first stretch is recognition — seeing the Grievance
+                Loop that has been running them, sometimes for years. The middle neutralizes it into
+                the Release Loop and clears what has accumulated. The last sessions build the
+                Empowered Loop and rehearse it, so there’s something to run when the next trigger
+                arrives. Then they practice in the world for
                 three weeks, ten minutes of journaling a day, and we review how it’s holding.
               </p>
               <div className="border-t border-border">
