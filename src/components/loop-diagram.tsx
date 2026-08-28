@@ -1,5 +1,5 @@
 import grievanceImg from "@/assets/2-2-panel2-release-portrait.png";
-import releaseImg from "@/assets/5-2-3-panel3-productive-portrait.png";
+import releaseImg from "@/assets/6-2-3-panel3-productive-portrait.png";
 import empoweredImg from "@/assets/4-3-1-panel1-grievance-portrait.png";
 
 const PANELS = [
