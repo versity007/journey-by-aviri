@@ -9,13 +9,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A confidential six-session, 1-on-1 program for the one talented employee whose friction is shaping how everyone else behaves. Fixed container, no retainer.",
+          "A confidential seven-session, 1-on-1 program for the one talented employee whose friction is shaping how everyone else behaves. Fixed container, no retainer.",
       },
       { property: "og:title", content: "JOurneY — Remove the Friction at Its Source" },
       {
         property: "og:description",
         content:
-          "Six sessions across seven weeks, one-on-one. For managers, founders and exec teams dealing with one difficult person.",
+          "Seven sessions across seven weeks, one-on-one. For managers, founders and exec teams dealing with one difficult person.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -50,7 +50,7 @@ const notThis = [
   },
   {
     label: "Not coaching on retainer",
-    body: "Six sessions, then it ends. No open-ended hourly relationship and no dependency by design.",
+    body: "Seven sessions, then it ends. No open-ended hourly relationship and no dependency by design.",
   },
   {
     label: "Not performance management",
@@ -64,9 +64,9 @@ const notThis = [
 
 const facts = [
   ["Format", "Confidential 1-on-1"],
-  ["Sessions", "6 × 1 hour, with a trained guide"],
+  ["Sessions", "7 × 1 hour, with a trained guide"],
   ["Before session one", "Prep week — reading and a first pass on paper"],
-  ["Between sessions", "~2.5 hrs of reading and reflection"],
+  ["Weekly load", "~3 hrs a week, 21 hours total, call plus assignments"],
   ["After", "Daily practice, then a review call at week 10"],
   ["Reported to you", "Nothing"],
   ["Investment", "Contact us to discuss"],
@@ -329,10 +329,10 @@ function Index() {
             <div>
               <div className="eyebrow mb-6 text-primary">The Experience</div>
               <h2 className="display mb-8 text-[clamp(30px,3.2vw,50px)] leading-[1.06]">
-                Six sessions across seven weeks. A follow-up three weeks later.
+                Seven sessions across seven weeks. A follow-up three weeks later.
               </h2>
               <p className="mb-8 text-[19px] leading-[1.7] text-body">
-                Seven weeks is a sprint, not a subscription: a prep week, six working sessions, and an
+                Seven weeks is a sprint, not a subscription: a prep week, seven working sessions, and an
                 end you can point to. The first stretch is recognition — getting the loop out of their
                 head and onto the table where it can be looked at. The middle clears what has
                 accumulated. The last sessions build the replacement and rehearse it, so there’s
