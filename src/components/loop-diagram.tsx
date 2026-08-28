@@ -1,6 +1,6 @@
 import grievanceImg from "@/assets/12-2-panel2-release-portrait.png";
 import releaseImg from "@/assets/13-2-3-panel3-productive-portrait.png";
-import productiveImg from "@/assets/14-3-1-panel1-grievance-portrait.png";
+import empoweredImg from "@/assets/1-3-1-panel1-grievance-portrait.png";
 
 const PANELS = [
   {
@@ -13,13 +13,13 @@ const PANELS = [
     src: releaseImg,
     width: 987,
     height: 1402,
-    alt: "Painting of a person standing outside an orange circular loop, looking at it - Release",
+    alt: "Painting of a person crouched outside a fiery circular loop, reaching in - the Release loop",
   },
   {
-    src: productiveImg,
+    src: empoweredImg,
     width: 987,
     height: 1402,
-    alt: "Painting of a person lassoing a glowing orange circular loop - the Productive loop",
+    alt: "Painting of a person standing on a fiery circular loop, swinging a rope lasso - the Empowered loop",
   },
 ];
 
