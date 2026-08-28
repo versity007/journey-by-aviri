@@ -1,6 +1,6 @@
-import grievanceImg from "@/assets/2-2-panel2-release-portrait.png";
-import releaseImg from "@/assets/6-2-3-panel3-productive-portrait.png";
-import empoweredImg from "@/assets/4-3-1-panel1-grievance-portrait.png";
+import grievanceImg from "@/assets/3-8-1-panel1-grievance-portrait.png";
+import releaseImg from "@/assets/4-8-2-panel2-release-portrait.png";
+import empoweredImg from "@/assets/5-8-3-panel3-empowered-portrait.png";
 
 const PANELS = [
   {
@@ -17,9 +17,9 @@ const PANELS = [
   },
   {
     src: empoweredImg,
-    width: 987,
-    height: 1402,
-    alt: "Painting of a person standing on a fiery circular loop, swinging a rope lasso - the Empowered loop",
+    width: 1024,
+    height: 1536,
+    alt: "Painting of a man standing below a fiery sun loop, arm attached to it, wielding the loop itself - the Empowered loop",
   },
 ];
 
