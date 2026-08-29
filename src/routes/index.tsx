@@ -50,10 +50,11 @@ const journey = [
     step: "Loop one — where it starts",
     name: "The Grievance Loop",
     body: "You’re locked inside it, and it’s running you: angry, righteous, certain, and quietly spreading the cost to your team. You don’t even realize it’s a loop.",
-    img: null,
-    imgAlt: null,
-    imgW: null,
-    imgH: null,
+    img: grievancePanel,
+    imgAlt:
+      "Painting of a person curled up inside a fiery red circular loop - the Grievance loop",
+    imgW: 987,
+    imgH: 1402,
   },
   {
     step: "Loop two — the neutralizing",
@@ -71,7 +72,7 @@ const journey = [
     body: "The fire doesn’t get put out. It gets harnessed — the same power that was inside the grievance, now aimed at massive productivity.",
     img: empoweredPanel,
     imgAlt:
-      "Painting of a man in a bright meadow standing below a glowing sun loop, arm attached to it, wielding the loop itself - the Empowered loop",
+      "Painting of a lone silhouette on a dark field wielding a loop burning golden like sunrise, green shoots at its base - the Empowered loop",
     imgW: 1024,
     imgH: 1536,
   },
@@ -246,53 +247,26 @@ function Index() {
             Loop — the first of three loops this program moves you through.
           </p>
 
-          <div className="flex justify-center">
-            <img
-              src={grievancePanel}
-              alt="Painting of a person curled up inside a fiery red circular loop - the Grievance loop"
-              width={987}
-              height={1402}
-              loading="eager"
-              decoding="async"
-              className="w-full max-w-sm rounded-[10px]"
-            />
-          </div>
-
-          <div className="flex items-center gap-4 pt-6">
-            <span className="text-xs font-medium uppercase tracking-[0.18em] text-dark-foreground/50">
-              The Grievance Loop → The Release Loop → The Empowered Loop
-            </span>
-            <span className="h-px flex-1 bg-rule-invert" />
-            <span className="text-xl text-ember">↻</span>
-          </div>
-
-          <div className="mt-16 grid gap-px border-y border-rule-invert bg-rule-invert">
+          <div className="grid gap-12 md:grid-cols-3 md:gap-8">
             {journey.map((j) => (
-              <div
-                key={j.name}
-                className="flex flex-col gap-8 bg-dark px-8 pt-10 pb-12 md:flex-row md:items-center md:gap-12"
-              >
-                {j.img && j.imgAlt && j.imgW && j.imgH && (
-                  <img
-                    src={j.img}
-                    alt={j.imgAlt}
-                    width={j.imgW}
-                    height={j.imgH}
-                    loading="eager"
-                    decoding="async"
-                    className="w-full max-w-[240px] self-center rounded-[10px] md:shrink-0"
-                  />
-                )}
-                <div>
+              <figure key={j.name} className="flex flex-col">
+                <img
+                  src={j.img}
+                  alt={j.imgAlt}
+                  width={j.imgW}
+                  height={j.imgH}
+                  loading="eager"
+                  decoding="async"
+                  className="aspect-[2/3] w-full rounded-[10px] object-cover"
+                />
+                <figcaption className="pt-6">
                   <div className="mb-3 text-[11px] font-semibold tracking-[0.2em] text-ember">
                     {j.step}
                   </div>
                   <h3 className="mb-4 font-serif text-2xl font-normal leading-[1.14]">{j.name}</h3>
-                  <p className="max-w-[38em] text-[17px] leading-[1.65] text-dark-foreground/70">
-                    {j.body}
-                  </p>
-                </div>
-              </div>
+                  <p className="text-[16px] leading-[1.65] text-dark-foreground/70">{j.body}</p>
+                </figcaption>
+              </figure>
             ))}
           </div>
 
@@ -580,4 +554,5 @@ function Index() {
     </div>
   );
 }
+
 
