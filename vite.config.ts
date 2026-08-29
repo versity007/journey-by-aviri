@@ -6,18 +6,7 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// GitHub Pages builds only: the Pages Actions workflow sets GITHUB_PAGES=true, which
-// switches the build to a static prerendered site under the repo's Pages subpath.
-// Lovable builds never set it, so their Cloudflare output is unchanged.
-const isGitHubPages = process.env.GITHUB_PAGES === "true";
-
 export default defineConfig({
-  ...(isGitHubPages
-    ? {
-        vite: { base: "/journey-by-aviri/" },
-        nitro: { preset: "github-pages" },
-      }
-    : {}),
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
