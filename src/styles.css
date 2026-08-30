@@ -168,3 +168,107 @@
   letter-spacing: -0.01em;
 }
 
+
+/*
+ * Three-loop vertical folds ("The journey" section).
+ * One loop per fold: large panel art, editorial caption, hairline rhythm.
+ * Phone-first: art on top, caption below. Desktop: alternating two-column folds.
+ */
+.loopfolds {
+  counter-reset: loopfold;
+}
+
+.loopfold {
+  counter-increment: loopfold;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 60px 0 64px;
+}
+
+.loopfolds > .loopfold:first-child {
+  padding-top: 4px;
+}
+
+.loopfold + .loopfold {
+  border-top: 1px solid var(--rule-invert);
+}
+
+.loopfold-media {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  outline: 1px solid oklch(0.962 0.0115 84.58 / 12%);
+  outline-offset: -1px;
+  box-shadow: 0 28px 70px -28px oklch(0 0 0 / 60%);
+}
+
+.loopfold-caption::before {
+  content: "0" counter(loopfold);
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(46px, 6vw, 76px);
+  line-height: 1;
+  color: var(--ember);
+  opacity: 0.5;
+  margin-bottom: 22px;
+}
+
+.loopfold-step {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ember);
+  margin-bottom: 16px;
+}
+
+.loopfold-name {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(30px, 3.6vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+
+.loopfold-body {
+  font-size: 17px;
+  line-height: 1.7;
+  color: oklch(0.962 0.0115 84.58 / 70%);
+  max-width: 34em;
+  margin: 0;
+}
+
+.loopfolds-outro {
+  margin: 0;
+  border-top: 1px solid var(--rule-invert);
+  padding-top: 52px;
+  max-width: 46em;
+  font-size: 19px;
+  line-height: 1.65;
+  color: oklch(0.962 0.0115 84.58 / 70%);
+}
+
+@media (min-width: 1024px) {
+  .loopfold {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    column-gap: clamp(56px, 7vw, 120px);
+    align-items: center;
+    padding: 92px 0;
+  }
+
+  .loopfolds > .loopfold:first-child {
+    padding-top: 12px;
+  }
+
+  .loopfold:nth-child(even) .loopfold-media {
+    order: 2;
+  }
+
+  .loopfold:nth-child(even) .loopfold-caption {
+    order: 1;
+  }
+}
