@@ -247,9 +247,9 @@ function Index() {
             Loop — the first of three loops this program moves you through.
           </p>
 
-          <div className="grid gap-12 md:grid-cols-3 md:gap-8">
+          <div className="loopfolds">
             {journey.map((j) => (
-              <figure key={j.name} className="flex flex-col">
+              <figure key={j.name} className="loopfold">
                 <img
                   src={j.img}
                   alt={j.imgAlt}
@@ -257,20 +257,18 @@ function Index() {
                   height={j.imgH}
                   loading="eager"
                   decoding="async"
-                  className="aspect-[2/3] w-full rounded-[10px] object-cover"
+                  className="loopfold-media"
                 />
-                <figcaption className="pt-6">
-                  <div className="mb-3 text-[11px] font-semibold tracking-[0.2em] text-ember">
-                    {j.step}
-                  </div>
-                  <h3 className="mb-4 font-serif text-2xl font-normal leading-[1.14]">{j.name}</h3>
-                  <p className="text-[16px] leading-[1.65] text-dark-foreground/70">{j.body}</p>
+                <figcaption className="loopfold-caption">
+                  <div className="loopfold-step">{j.step}</div>
+                  <h3 className="loopfold-name">{j.name}</h3>
+                  <p className="loopfold-body">{j.body}</p>
                 </figcaption>
               </figure>
             ))}
           </div>
 
-          <p className="mt-10 max-w-[46em] text-[19px] leading-[1.65] text-dark-foreground/70">
+          <p className="loopfolds-outro">
             The journey runs on two tracks at once: an inner one — your own progression from
             grievance to release to self-empowerment — and an interpersonal one, where you learn to
             neutralize the grievances others carry against you and turn those conversations
