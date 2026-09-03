@@ -132,8 +132,10 @@ section .py-4 { padding-top: 0.6rem !important; padding-bottom: 0.6rem !importan
 .v3-fold-imgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; max-width: 430px; order: -1; }
 .v3-fold-imgs img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
 @media (min-width: 1024px) {
-  .v3-hero-row { grid-template-columns: 1fr; }
-  .v3-fold-imgs { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; max-width: 430px; order: -1; margin-top: 0; }
+  .v3-hero-row { grid-template-columns: 1fr auto; gap: 3.5rem; align-items: start; }
+  .v3-fold-imgs { grid-template-columns: repeat(3, 130px); gap: 0.75rem; max-width: none; order: 0; margin-top: 4rem; }
+  .v3-fold-imgs img:nth-child(1) { transform: translateY(4rem); }
+  .v3-fold-imgs img:nth-child(2) { transform: translateY(2rem); }
 }
 /* Sep 2 lock: what-this-isn't two-by-two */
 .v3-isnt-grid { display: grid; gap: 1px; background: rgba(0,0,0,0.10); border-top: 1px solid rgba(0,0,0,0.10); border-bottom: 1px solid rgba(0,0,0,0.10); }
