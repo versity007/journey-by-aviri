@@ -1,6 +1,9 @@
 # Changelog - JOurneY landing page
 
 ## 2026-09-09
+- "by Aviri" in the header and footer now links to https://aviri.com (new tab).
+- Contact form: submissions now go to jog@aviri.com (was bijoy@aviri.com; the four Get in Touch mailto fallbacks switched too). Added "Your email" (required) and "Your phone number" fields, included in the composed email body. Modal now shows direct contact options: Call 512-474-6155 (tel: link) and jog@aviri.com (mailto link).
+- Backup of the pre-edit live file saved as docs/v6-backup-20260909-5.html.
 - "Get in Touch" buttons now open a popup contact form (first name, last name, company, brief summary of your issue); submit opens the visitor's email app with a mailto to bijoy@aviri.com composed from the fields. No form backend; mobile-friendly.
 - Source-lineage list: the six author names (Dr. Fred Luskin, James Kimmel, Anna Lembke, Steven Pinker, John W. James, Frank Bruni) now link to their books, URLs taken from the "Landing Page Copy" doc (Fold 8 tab).
 - Removed the closing line "Aviri developed the JOurneY Method with founders, teams, organizations and communities." at the bottom of Where This Comes From - redundant with the same line in the section intro.
