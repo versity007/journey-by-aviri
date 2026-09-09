@@ -302,12 +302,7 @@ e.preventDefault();
 var f=form.first.value.trim(),l=form.last.value.trim(),c=form.company.value.trim(),s=form.summary.value.trim();
 var name=(f+' '+l).trim();
 var subject='Journey inquiry'+(name?' from '+name:'');
-var body='Name: '+name+'
-Company: '+(c||'-')+'
-
-Summary of issue:
-'+s+'
-';
+var body='Name: '+name+'\nCompany: '+(c||'-')+'\n\nSummary of issue:\n'+s+'\n';
 window.location.href='mailto:bijoy@aviri.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
 closeModal();
 });
