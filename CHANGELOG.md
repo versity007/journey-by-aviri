@@ -1,6 +1,7 @@
 # Changelog - JOurneY landing page
 
 ## 2026-09-09
+- Favicon replaced: was the Lovable default, now the Grievance loop painting (square crop of assets/5-4-6-9-1-panel1-grievance-portrait-notext.png, multi-size ICO). Also added docs/favicon.ico (same image) so /favicon.ico resolves directly. Backup of the old icon: docs/10-favicon-backup-20260909.ico.
 - "by Aviri" links (header + footer) repointed from https://aviri.com to https://www.aviri.com - the apex has no DNS record; www is the Teachable site. Backups: docs/v6-backup-20260909-7.html, docs/index-backup-20260909-2.html (both pre-link-fix).
 - Custom-domain cutover: docs/index.html replaced with the current page (was the stale v3 draft that the grievanceloop.com root served). Image/favicon paths in index.html and v6.html changed from absolute /journey-by-aviri/... to relative (assets/..., 10-favicon.ico) so they resolve on the custom domain root. Backups: docs/index-backup-20260909.html (old index = v3 draft), docs/v6-backup-20260909-6.html (pre-path-fix v6).
 - "by Aviri" in the header and footer now links to https://aviri.com (new tab).
